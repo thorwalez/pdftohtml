@@ -1,0 +1,3 @@
+index:
+    path: /
+    controller: ThorWalez\PdfToHtml\Controller\DefaultController::index

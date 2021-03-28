@@ -1,0 +1,14 @@
+<div class="form-group">
+    <div class="duty">
+            {{ form_label(childForm.salesTaxIdNumber) }}
+            {{ form_widget(childForm.salesTaxIdNumber) }}
+        <span class="leftCol">
+            {{ form_label(childForm.currency) }}
+            {{ form_widget(childForm.currency) }}
+        </span>
+        <span class="rightCol">
+            {{ form_label(childForm.invoiceAmount) }}
+            {{ form_widget(childForm.invoiceAmount, { 'value': '' }) }}
+        </span>
+    </div>
+</div>

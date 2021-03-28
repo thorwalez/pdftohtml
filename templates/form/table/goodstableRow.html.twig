@@ -1,0 +1,18 @@
+<tr>
+    <td>{{ form_widget(row.goodsDescription) }}</td>
+    <td>{{ form_widget(row.goodsPiece) }}</td>
+    <td>{{ form_widget(row.goodsWeight) }}</td>
+    <td>
+        <div class="dimensions">
+            <span class="leftCol">
+                {{ form_widget(row.dimensions.goodsLength) }}
+            </span>
+            <span class="middleCol">
+                {{ form_widget(row.dimensions.goodsWidth) }}
+            </span>
+            <span class="rightCol">
+                {{ form_widget(row.dimensions.goodsHeight) }}
+            </span>
+        </div>
+    </td>
+</tr>

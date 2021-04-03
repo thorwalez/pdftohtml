@@ -18,6 +18,7 @@ class Options extends AbstractType
         $resolver->setDefaults(
             array(
                 'data_class' => null,
+                'require_due_date' => false,
             )
         );
     }

@@ -19,6 +19,7 @@ class GoodsTableRow extends AbstractType
         $resolver->setDefaults(
             array(
                 'data_class' => null,
+                'require_due_date' => false,
             )
         );
     }
@@ -30,9 +31,9 @@ class GoodsTableRow extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('goodsDescription', TextType::class, ['attr' => ['class' => 'form-control']])
-            ->add('goodsPiece', TextType::class, ['attr' => ['class' => 'form-control']])
-            ->add('goodsWeight', TextType::class, ['attr' => ['class' => 'form-control']])
+            ->add('goodsDescription', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
+            ->add('goodsPiece', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
+            ->add('goodsWeight', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
             ->add('dimensions', GoodsDimension::class);
 
 

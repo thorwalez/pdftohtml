@@ -24,6 +24,7 @@ class Invoice  extends AbstractType
         $resolver->setDefaults(
             array(
                 'data_class' => null,
+                'require_due_date' => false,
             )
         );
     }
@@ -35,8 +36,8 @@ class Invoice  extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('invoiceToReceiver', CheckboxType::class, ['attr' => ['class' => 'form-control']])
-            ->add('customerNumberReceiver', TextType::class, ['attr' => ['class' => 'form-control']]);
+            ->add('invoiceToReceiver', CheckboxType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
+            ->add('customerNumberReceiver', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']]);
 
         parent::buildForm($builder, $options);
     }

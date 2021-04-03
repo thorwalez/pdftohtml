@@ -19,6 +19,7 @@ class Service extends AbstractType
         $resolver->setDefaults(
             array(
                 'data_class' => null,
+                'require_due_date' => false,
             )
         );
     }
@@ -30,11 +31,11 @@ class Service extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('special', DoupleCheckboxType::class, ['attr' => ['class' => 'form-control']])
-            ->add('nine', DoupleCheckboxType::class, ['attr' => ['class' => 'form-control']])
-            ->add('twelve', DoupleCheckboxType::class, ['attr' => ['class' => 'form-control']])
-            ->add('global', DoupleCheckboxType::class, ['attr' => ['class' => 'form-control']])
-            ->add('economy', CheckboxType::class, ['attr' => ['class' => 'form-control']]);
+            ->add('special', DoupleCheckboxType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
+            ->add('nine', DoupleCheckboxType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
+            ->add('twelve', DoupleCheckboxType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
+            ->add('global', DoupleCheckboxType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
+            ->add('economy', CheckboxType::class, ['required' => false, 'attr' => ['class' => 'form-control']]);
 
 
         parent::buildForm($builder, $options);

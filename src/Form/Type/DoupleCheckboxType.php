@@ -19,6 +19,7 @@ class DoupleCheckboxType extends AbstractType
         $resolver->setDefaults(
             array(
                 'data_class' => null,
+                'require_due_date' => false,
             )
         );
     }
@@ -30,8 +31,8 @@ class DoupleCheckboxType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('documents', CheckboxType::class, ['attr' => ['class' => 'form-control']])
-            ->add('goods', CheckboxType::class, ['attr' => ['class' => 'form-control']]);
+            ->add('documents', CheckboxType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
+            ->add('goods', CheckboxType::class, ['required' => false, 'attr' => ['class' => 'form-control']]);
 
         parent::buildForm($builder, $options);
     }

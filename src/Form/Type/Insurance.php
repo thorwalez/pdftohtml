@@ -19,6 +19,7 @@ class Insurance extends AbstractType
         $resolver->setDefaults(
             array(
                 'data_class' => null,
+                'require_due_date' => false,
             )
         );
     }
@@ -30,8 +31,8 @@ class Insurance extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('insurance', CheckboxType::class, ['attr' => ['class' => 'form-control']])
-            ->add('goodsValue', TextType::class, ['attr' => ['class' => 'form-control']]);
+            ->add('insurance', CheckboxType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
+            ->add('goodsValue', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']]);
 
 
         parent::buildForm($builder, $options);

@@ -19,6 +19,7 @@ class GoodsTable extends AbstractType
         $resolver->setDefaults(
             array(
                 'data_class' => null,
+                'require_due_date' => false,
             )
         );
     }
@@ -35,8 +36,8 @@ class GoodsTable extends AbstractType
             ->add('thirdRow', GoodsTableRow::class)
             ->add('fourthRow', GoodsTableRow::class)
             ->add('fifthRow', GoodsTableRow::class)
-            ->add('totalPiece', TextType::class, ['attr' => ['class' => 'form-control']])
-            ->add('totalWeight', TextType::class, ['attr' => ['class' => 'form-control']])
+            ->add('totalPiece', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
+            ->add('totalWeight', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
          ;
 
 

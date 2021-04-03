@@ -42,22 +42,16 @@ class DefaultController extends AbstractController
         if ($request->isMethod('POST')) {
             $form->handleRequest($request);
             if ($form->isSubmitted() && $form->isValid()) {
+                try {
+                    \dump($request->request->all());die;
 
-//                /** @var PaymentRepository $repository */
-//                $repository = $this->getDoctrine()->getRepository(PaymentEntity::class);
-//
-//                $hydrator = new PaymentHydrator();
-//
-//                try {
-//
-//                    $repository->save($hydrator->hydrate($form->getData()));
-//
-//                    $this->addFlash( 'success','Bankdaten wurde gespeichert');
-//                }catch (OptimisticLockException $e) {
-//                    $this->addFlash('error', $e->getMessage());
-//                }catch (ORMException $e) {
-//                    $this->addFlash('error', $e->getMessage());
-//                }
+
+                    $this->addFlash( 'success','Erfolgreich gesichert');
+                }catch (OptimisticLockException $e) {
+                    $this->addFlash('error', $e->getMessage());
+                }catch (ORMException $e) {
+                    $this->addFlash('error', $e->getMessage());
+                }
             }
         }
 

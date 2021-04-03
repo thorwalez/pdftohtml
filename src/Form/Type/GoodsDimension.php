@@ -19,6 +19,7 @@ class GoodsDimension extends AbstractType
         $resolver->setDefaults(
             array(
                 'data_class' => null,
+                'require_due_date' => false,
             )
         );
     }
@@ -30,9 +31,9 @@ class GoodsDimension extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('goodsLength', TextType::class, ['attr' => ['class' => 'form-control']])
-            ->add('goodsWidth', TextType::class, ['attr' => ['class' => 'form-control']])
-            ->add('goodsHeight', TextType::class, ['attr' => ['class' => 'form-control']]);
+            ->add('goodsLength', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
+            ->add('goodsWidth', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
+            ->add('goodsHeight', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']]);
 
         parent::buildForm($builder, $options);
     }

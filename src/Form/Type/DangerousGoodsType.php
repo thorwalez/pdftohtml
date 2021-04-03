@@ -19,6 +19,7 @@ class DangerousGoodsType extends AbstractType
         $resolver->setDefaults(
             array(
                 'data_class' => null,
+                'require_due_date' => false,
             )
         );
     }
@@ -30,8 +31,8 @@ class DangerousGoodsType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('yes', CheckboxType::class, ['attr' => ['class' => 'form-control']])
-            ->add('no', CheckboxType::class, ['attr' => ['class' => 'form-control']]);
+            ->add('yes', CheckboxType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
+            ->add('no', CheckboxType::class, ['required' => false, 'attr' => ['class' => 'form-control']]);
 
         parent::buildForm($builder, $options);
     }

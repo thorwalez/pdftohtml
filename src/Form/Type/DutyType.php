@@ -20,6 +20,7 @@ class DutyType extends AbstractType
         $resolver->setDefaults(
             array(
                 'data_class' => null,
+                'require_due_date' => false,
             )
         );
     }
@@ -31,9 +32,9 @@ class DutyType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('salesTaxIdNumber', TextType::class, ['attr' => ['class' => 'form-control']])
-            ->add('currency', TextType::class, ['attr' => ['class' => 'form-control']])
-            ->add('invoiceAmount', TextType::class, ['attr' => ['class' => 'form-control']]);
+            ->add('salesTaxIdNumber', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
+            ->add('currency', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
+            ->add('invoiceAmount', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']]);
 
 
         parent::buildForm($builder, $options);

@@ -21,6 +21,7 @@ class Main extends AbstractType
         $resolver->setDefaults(
             array(
                 'data_class' => null,
+                 'require_due_date' => false,
             )
         );
     }
@@ -32,9 +33,9 @@ class Main extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('customerNumber', TextType::class, ['attr' => ['class' => 'form-control', 'autofocus' => true]])
+            ->add('customerNumber', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control', 'autofocus' => true]])
             ->add('invoice', Invoice::class)
-            ->add('customerInformation', TextType::class, ['attr' => ['class' => 'form-control']])
+            ->add('customerInformation', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
             ->add('changeAddress', Addresses::class)
             ->add('receiverAddress', Addresses::class)
             ->add('deliveryAddress', Addresses::class)
@@ -42,7 +43,7 @@ class Main extends AbstractType
             ->add('services', Service::class)
             ->add('options', Options::class)
             ->add('goodsTable', GoodsTable::class)
-            ->add('specialNotes', TextareaType::class, ['attr' => ['class' => 'form-control']])
+            ->add('specialNotes', TextareaType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
             ->add('duty', DutyType::class)
             ->add('create', SubmitType::class, ['attr' => ['class' => 'btn btn-lg btn-primary'], 'label' => 'Save and next Step' ]);
 

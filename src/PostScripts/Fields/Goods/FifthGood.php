@@ -37,13 +37,16 @@ class FifthGood extends AbstractTable
      * @param array $data
      * @example [ 'description' => 'User Text', 'piece' => '11', ... ]
      */
-    public function __construct( array $data    ) {
-        $this->description = $data['description'];
-        $this->piece = $data['piece'];
-        $this->weight = $data['weight'];
-        $this->firstDimension = $data['firstDimension'];
-        $this->secondDimension = $data['secondDimension'];
-        $this->thirdDimension = $data['thirdDimension'];
+    public function __construct(array $data)
+    {
+        $this->description = $data['goodsDescription'];
+        $this->piece = $data['goodsPiece'];
+        $this->weight = $data['goodsWeight'];
+
+        $dimensions = $data['dimensions'];
+        $this->firstDimension = $dimensions['goodsLength'];
+        $this->secondDimension = $dimensions['goodsWidth'];
+        $this->thirdDimension = $dimensions['goodsHeight'];
     }
 
     /**
@@ -118,11 +121,11 @@ class FifthGood extends AbstractTable
     public function toString() : string
     {
         return $this->getGoodsDescription() . \PHP_EOL .
-        $this->getGoodsPiece() . \PHP_EOL .
-        $this->getGoodsWeight() . \PHP_EOL .
-        $this->getGoodsFirstDimension() . \PHP_EOL .
-        $this->getGoodsSecondDimension() . \PHP_EOL .
-        $this->getGoodsThirdDimension() . \PHP_EOL ;
+            $this->getGoodsPiece() . \PHP_EOL .
+            $this->getGoodsWeight() . \PHP_EOL .
+            $this->getGoodsFirstDimension() . \PHP_EOL .
+            $this->getGoodsSecondDimension() . \PHP_EOL .
+            $this->getGoodsThirdDimension() . \PHP_EOL;
     }
 
 }

@@ -12,11 +12,27 @@ use ThorWalez\PdfToHtml\PostScripts\Fields\AbstractCheckField;
  */
 class NineExpress extends AbstractCheckField
 {
+    /** @var bool */
+    private $isDocumentCheck;
+
+    /** @var bool */
+    private $isGoodsCheck;
+
+    /**
+     * NineExpress constructor.
+     * @param bool $isDocumentCheck
+     * @param bool $isGoodsCheck
+     */
+    public function __construct(bool $isDocumentCheck = false, bool $isGoodsCheck = false)
+    {
+        $this->isDocumentCheck = $isDocumentCheck;
+        $this->isGoodsCheck = $isGoodsCheck;
+    }
 
     /**
      * @return string
      */
-    public function getDocumentCheck()
+    public function getDocumentCheck() : string
     {
         $xPosition = 558;
         $yPosition = 417;
@@ -27,7 +43,7 @@ class NineExpress extends AbstractCheckField
     /**
      * @return string
      */
-    public function getGoodsCheck()
+    public function getGoodsCheck() : string
     {
         $xPosition = 600;
         $yPosition = 417;
@@ -40,7 +56,16 @@ class NineExpress extends AbstractCheckField
      */
     public function toString() : string
     {
-        return $this->getDocumentCheck() . \PHP_EOL .
-            $this->getGoodsCheck() . \PHP_EOL;
+        $content = self::EMPTY_CONTENT_STRING_PATTERN;
+        if ($this->isDocumentCheck) {
+            $content .= $this->getDocumentCheck() . \PHP_EOL;
+        }
+        if ($this->isGoodsCheck) {
+            $content .= $this->getGoodsCheck() . \PHP_EOL;
+        }
+
+        if ($content != self::EMPTY_CONTENT_STRING_PATTERN) {
+            return $content;
+        }
     }
 }

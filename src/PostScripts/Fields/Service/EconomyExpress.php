@@ -16,7 +16,7 @@ class EconomyExpress extends AbstractCheckField
     /**
      * @return string
      */
-    public function getGoodsCheck()
+    public function getGoodsCheck() : string
     {
         $xPosition = 600;
         $yPosition = 365;

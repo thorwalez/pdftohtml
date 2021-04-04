@@ -18,16 +18,16 @@ class Receiver extends AbstractAddress
      */
     public function __construct(array $data)
     {
-        $this->firstName = $data['firstName'];
-        $this->secondeName = $data['secondeName'];
+        $this->firstName = $data['firstname'];
+        $this->secondeName = $data['name'];
         $this->street = $data['street'];
-        $this->houseNumber = $data['houseNumber'];
-        $this->postalCode = $data['postalCode'];
+        $this->houseNumber = $data['housenumber'];
+        $this->postalCode = $data['postalcode'];
         $this->city = $data['city'];
         $this->state = $data['state'];
         $this->country = $data['country'];
-        $this->phoneNumber = $data['phoneNumber'];
-        $this->contactPerson = $data['contactPerson'];
+        $this->phoneNumber = $data['phonenumber'];
+        $this->contactPerson = $data['contactperson'];
     }
 
     public function getName() : string

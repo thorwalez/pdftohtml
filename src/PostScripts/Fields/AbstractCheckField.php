@@ -9,6 +9,7 @@ namespace ThorWalez\PdfToHtml\PostScripts\Fields;
  */
 abstract class AbstractCheckField
 {
+    const EMPTY_CONTENT_STRING_PATTERN = '';
     const FILED_POSITION_PATTERN = '%d %d moveto (%s) show';
 
     const CHECK_ICON_PATTERN = 'X';

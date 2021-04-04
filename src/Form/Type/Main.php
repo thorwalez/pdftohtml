@@ -42,8 +42,8 @@ class Main extends AbstractType
             ->add('dangerousGoods', DangerousGoodsType::class)
             ->add('services', Service::class)
             ->add('options', Options::class)
-            ->add('goodsTable', GoodsTable::class)
             ->add('specialNotes', TextareaType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
+            ->add('goodsTable', GoodsTable::class)
             ->add('duty', DutyType::class)
             ->add('create', SubmitType::class, ['attr' => ['class' => 'btn btn-lg btn-primary'], 'label' => 'Save and next Step' ]);
 

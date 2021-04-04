@@ -34,8 +34,8 @@ class Addresses extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstname', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control', 'autofocus' => true]])
-            ->add('name', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control', 'autofocus' => true]])
+            ->add('firstname', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
+            ->add('name', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
             ->add('street', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
             ->add('housenumber', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
             ->add('postalcode', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])

@@ -4,6 +4,7 @@
 namespace ThorWalez\PdfToHtml\Mappers;
 
 
+use ThorWalez\PdfToHtml\Calculator\TotalCalculator;
 use ThorWalez\PdfToHtml\Models\MainModel;
 
 /**
@@ -19,7 +20,7 @@ class RequestToModel
     public function map(array $requestData) : MainModel
     {
 
-//        \dump($requestData);die;
+        //        \dump($requestData);die;
         $model = new MainModel();
 
         $model->setClientNumber($requestData['customerNumber']);
@@ -63,8 +64,13 @@ class RequestToModel
         $model->setThirdGood($requestData['goodsTable']['thirdRow']);
         $model->setFourthGood($requestData['goodsTable']['fourthRow']);
         $model->setFifthGood($requestData['goodsTable']['fifthRow']);
-        $model->setTotalPieceGoods($requestData['goodsTable']['totalPiece']);
-        $model->setTotalWeightGoods($requestData['goodsTable']['totalWeight']);
+
+        $model->setTotalPieceGoods($this->calculateTotalPiece($requestData['goodsTable']));
+        $model->setTotalWeightGoods($this->calculateTotalWeight($requestData['goodsTable']));
+
+        //        $model->setTotalPieceGoods($requestData['goodsTable']['totalPiece']);
+        //        $model->setTotalWeightGoods($requestData['goodsTable']['totalWeight']);
+
         /** @note Goods Table End */
 
         /** @note Duty Area Start */
@@ -72,10 +78,46 @@ class RequestToModel
         $model->setCurrency($requestData['duty']['currency']);
 
         $model->setInvoiceAmountDuty($requestData['duty']['invoiceAmount']);
+
         /** @note Duty Area End */
 
 
-
         return $model;
+    }
+
+    /**
+     * @param array $dataList
+     * @return string
+     */
+    private function calculateTotalPiece(array $dataList) : string
+    {
+        $totalPieceList = [
+            $dataList['firstRow']['goodsPiece'],
+            $dataList['secondRow']['goodsPiece'],
+            $dataList['thirdRow']['goodsPiece'],
+            $dataList['fourthRow']['goodsPiece'],
+            $dataList['fifthRow']['goodsPiece'],
+        ];
+        $calculator = new TotalCalculator($totalPieceList);
+
+        return $calculator->total();
+    }
+
+    /**
+     * @param array $dataList
+     * @return string
+     */
+    private function calculateTotalWeight(array $dataList) : string
+    {
+        $totalWeightList = [
+            $dataList['firstRow']['goodsWeight'],
+            $dataList['secondRow']['goodsWeight'],
+            $dataList['thirdRow']['goodsWeight'],
+            $dataList['fourthRow']['goodsWeight'],
+            $dataList['fifthRow']['goodsWeight'],
+        ];
+        $calculator = new TotalCalculator($totalWeightList);
+
+        return $calculator->total();
     }
 }

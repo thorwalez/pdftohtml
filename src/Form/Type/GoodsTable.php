@@ -36,8 +36,8 @@ class GoodsTable extends AbstractType
             ->add('thirdRow', GoodsTableRow::class)
             ->add('fourthRow', GoodsTableRow::class)
             ->add('fifthRow', GoodsTableRow::class)
-            ->add('totalPiece', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
-            ->add('totalWeight', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
+            ->add('totalPiece', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control totalPiece']])
+            ->add('totalWeight', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control totalWeight']])
          ;
 
 

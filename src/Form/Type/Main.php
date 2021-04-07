@@ -45,7 +45,7 @@ class Main extends AbstractType
             ->add('specialNotes', TextareaType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
             ->add('goodsTable', GoodsTable::class)
             ->add('duty', DutyType::class)
-            ->add('create', SubmitType::class, ['attr' => ['class' => 'btn btn-lg btn-primary'], 'label' => 'Save and next Step' ]);
+            ->add('create', SubmitType::class, ['attr' => ['class' => 'btn btn-lg btn-primary','value'=>'create'], 'label' => 'Save and next Step' ]);
 
 
         parent::buildForm($builder, $options);

@@ -32,8 +32,8 @@ class GoodsTableRow extends AbstractType
     {
         $builder
             ->add('goodsDescription', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
-            ->add('goodsPiece', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
-            ->add('goodsWeight', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
+            ->add('goodsPiece', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control goodsPiece', 'onInput' => 'calculatorPiece()' ]])
+            ->add('goodsWeight', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control goodsWeight', 'onInput' => 'calculatorWeight()']])
             ->add('dimensions', GoodsDimension::class);
 
 

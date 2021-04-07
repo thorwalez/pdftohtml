@@ -70,6 +70,7 @@ class DefaultController extends AbstractController
 
                     $this->addFlash( 'success','Erfolgreich gesichert');
                 }catch (\Exception $e) {
+                    \dump($e->getMessage());
                     $this->addFlash('error', $e->getMessage());
                 }
             }

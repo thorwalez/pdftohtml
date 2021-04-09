@@ -1,7 +1,7 @@
 <?php
 
 
-namespace ThorWalez\PdfToHtml\Converter;
+namespace ThorWalez\PdfToHtml\Converters;
 
 /**
  * Class GermanSpecialCharacterToPostScriptCharacter

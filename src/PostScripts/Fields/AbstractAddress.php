@@ -3,6 +3,8 @@
 
 namespace ThorWalez\PdfToHtml\PostScripts\Fields;
 
+use ThorWalez\PdfToHtml\Converters\GermanSpecialCharacterToPostScriptCharacter;
+
 /**
  * Class AbstractAddress
  * @package ThorWalez\PdfToHtml\PostScripts\Fields
@@ -86,14 +88,17 @@ abstract class AbstractAddress
      */
     public function toString() : string
     {
-        return $this->getName() . \PHP_EOL .
-            $this->getStreet() . \PHP_EOL .
+        $converter = new GermanSpecialCharacterToPostScriptCharacter();
+
+        /** @todo converter der Umlaute bauen */
+        return $converter->convert($this->getName()) . \PHP_EOL .
+            $converter->convert($this->getStreet()) . \PHP_EOL .
             $this->getPostalCode() . \PHP_EOL .
-            $this->getCity() . \PHP_EOL .
-            $this->getState() . \PHP_EOL .
-            $this->getCountry() . \PHP_EOL .
+            $converter->convert($this->getCity()) . \PHP_EOL .
+            $converter->convert($this->getState()) . \PHP_EOL .
+            $converter->convert($this->getCountry()) . \PHP_EOL .
             $this->getPhoneNumber() . \PHP_EOL .
-            $this->getContactPerson() . \PHP_EOL;
+            $converter->convert($this->getContactPerson()) . \PHP_EOL;
     }
 
     /**

@@ -32,11 +32,53 @@ class Insert
      */
     private function defaultContent() : string
     {
-        return '
-% x y start with 0 from bottom or left edge
-/Times-Roman findfont
-12 scalefont
-setfont
-newpath' . \PHP_EOL;
+        return '/Reencsmalldict 12 dict def
+/ReEncodeSmall
+{ Reencsmalldict begin
+/NewCodesAndNames exch def
+/NewFontName exch def
+/BaseFontName exch def
+/BaseFontDict                % Basis-Font suchen
+BaseFontName findfont def
+/NewFont BaseFontDict        % Neues Dictionary in ausreichender Groesse
+maxlength dict def           % schaffen
+BaseFontDict                 % Alle Eintraege des Basis-Fonts, bis auf FID-
+{ exch dup /FID ne           % Feld, werden kopiert.
+{ dup /Encoding eq
+{ exch dup
+length array copy
+NewFont 3 1 roll put
+}
+{ exch NewFont
+3 1 roll put
+ } ifelse
+}
+{ pop pop                  % FID-Eintrag ignorieren
+} ifelse
+} forall
+NewFont
+/FontName NewFontName put    % Neuen Namen eintragen
+NewCodesAndNames aload pop   % Wertepaare fuer Aenderung des Codierungsvek-
+% tors laden.
+NewCodesAndNames             % Fuer jedes Wertepaar auf dem Stack wird der
+length 2 idiv                % der neue Name in den Vektor eingetragen.
+{ NewFont /Encoding get
+3 1 roll put
+} repeat
+NewFontName NewFont          % aus neuem Font wird POSTSCRIPT-Font; das von
+definefont pop               % definefont gelieferte Diction. wird ignoriert
+end
+} def
+/GermanVec
+[ 8#201 /udieresis
+8#204 /adieresis
+8#216 /Adieresis
+8#224 /odieresis
+8#231 /Odieresis
+8#232 /Udieresis
+8#341 /germandbls
+] def
+/Courier /Courier-German GermanVec ReEncodeSmall
+/Courier-German findfont 10 scalefont setfont' . \PHP_EOL;
     }
 }

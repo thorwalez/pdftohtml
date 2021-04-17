@@ -76,6 +76,7 @@
 {% block title %}TNT create{% endblock %}
 
 {% block body %}
+    {{ include('form/fileList.html.twig', {fileList: fileList})}}
     <div class="container address form">
         {{ form_start(form) }}
         {% for label, messages in app.flashes(['success', 'error']) %}

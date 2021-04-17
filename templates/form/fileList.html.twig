@@ -1,0 +1,19 @@
+<div class="accordion" id="accordionList">
+    <div class="card">
+        <div class="card-header" id="headingList">
+            <h5 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseList" aria-expanded="true" aria-controls="collapseList">
+                    {{ 'Print File List'|trans }}
+                </button>
+            </h5>
+        </div>
+        <div id="collapseList" class="collapse show" aria-labelledby="headingList" data-parent="#accordionList">
+            <div class="card-body">
+                {% for fileName, file in fileList %}
+
+                    <li><a href="{{path('showpdf', { 'file': file} ) }}" target="_blank">{{ fileName }}</a></li>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

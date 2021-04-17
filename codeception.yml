@@ -1,0 +1,19 @@
+namespace: App\Tests
+paths:
+    tests: tests
+    output: tests/_output
+    data: tests/_data
+    support: tests/_support
+    envs: tests/_envs
+actor_suffix: Tester
+extensions:
+    enabled:
+        - Codeception\Extension\RunFailed
+params:
+    - .env
+settings:
+    # Set the error_reporting level
+    # You can specify either a predefined constant or an integer value
+    # See https://www.php.net/manual/en/function.error-reporting.php
+    # See https://www.php.net/manual/en/errorfunc.constants.php
+    error_level: E_ALL & ~E_STRICT & ~E_DEPRECATED & ~E_USER_DEPRECATED

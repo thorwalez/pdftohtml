@@ -1,0 +1,69 @@
+<div class="form-group">
+    <table>
+      <thead>
+        <tr>
+            <td> &nbsp;</td>
+            <td>{{ form_label(childForm.special.documents) }}</td>
+            <td>{{ form_label(childForm.special.goods) }}</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+            <td>
+                {{ form_label(childForm.special) }}
+            </td>
+            <td>
+                {{ form_widget(childForm.special.documents) }}
+            </td>
+            <td>
+                {{ form_widget(childForm.special.goods) }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{ form_label(childForm.nine) }}
+            </td>
+            <td>
+                {{ form_widget(childForm.nine.documents) }}
+            </td>
+            <td>
+                {{ form_widget(childForm.nine.goods) }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{ form_label(childForm.twelve) }}
+            </td>
+            <td>
+                {{ form_widget(childForm.twelve.documents) }}
+            </td>
+            <td>
+                {{ form_widget(childForm.twelve.goods) }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{ form_label(childForm.global) }}
+            </td>
+            <td>
+                {{ form_widget(childForm.global.documents) }}
+            </td>
+            <td>
+                {{ form_widget(childForm.global.goods) }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{ form_label(childForm.economy) }}
+            </td>
+            <td>
+                &nbsp;
+            </td>
+            <td>
+                {{ form_widget(childForm.economy) }}
+            </td>
+        </tr>
+
+      </tbody>
+    </table>
+</div>

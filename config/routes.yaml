@@ -1,3 +1,7 @@
 index:
     path: /
     controller: ThorWalez\PdfToHtml\Controller\DefaultController::index
+
+create:
+    path: /create
+    controller: ThorWalez\PdfToHtml\Controller\DefaultController::create

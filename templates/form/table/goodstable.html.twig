@@ -1,38 +1,38 @@
 <table>
     <thead>
-        <tr>
-            <td>Goods Description</td>
-            <td>Piece</td>
-            <td>Weight</td>
-            <td>
-                <div class="dimensions">
-                    <p class="text-center">Dimensions</p>
-                    <span class="leftCol">
+    <tr>
+        <td>{{ 'Goods Description' | trans }}</td>
+        <td>{{ 'Piece' | trans }}</td>
+        <td>{{ 'Weight' | trans }}</td>
+        <td>
+            <div class="dimensions">
+                <p class="text-center">{{ 'Dimensions' | trans }}</p>
+                <span class="leftCol">
                         {{ form_label(form.goodsTable.firstRow.dimensions.goodsLength) }}
                     </span>
-                    <span class="middleCol">
+                <span class="middleCol">
                         {{ form_label(form.goodsTable.firstRow.dimensions.goodsWidth) }}
                     </span>
-                    <span class="rightCol">
+                <span class="rightCol">
                         {{ form_label(form.goodsTable.firstRow.dimensions.goodsHeight) }}
                     </span>
-                </div>
-            </td>
-        </tr>
+            </div>
+        </td>
+    </tr>
 
     </thead>
     <tbody>
-        {{ include('form/table/goodstableRow.html.twig', {row: form.goodsTable.firstRow}) }}
-        {{ include('form/table/goodstableRow.html.twig', {row: form.goodsTable.secondRow}) }}
-        {{ include('form/table/goodstableRow.html.twig', {row: form.goodsTable.thirdRow}) }}
-        {{ include('form/table/goodstableRow.html.twig', {row: form.goodsTable.fourthRow}) }}
-        {{ include('form/table/goodstableRow.html.twig', {row: form.goodsTable.fifthRow}) }}
+    {{ include('form/table/goodstableRow.html.twig', {row: form.goodsTable.firstRow}) }}
+    {{ include('form/table/goodstableRow.html.twig', {row: form.goodsTable.secondRow}) }}
+    {{ include('form/table/goodstableRow.html.twig', {row: form.goodsTable.thirdRow}) }}
+    {{ include('form/table/goodstableRow.html.twig', {row: form.goodsTable.fourthRow}) }}
+    {{ include('form/table/goodstableRow.html.twig', {row: form.goodsTable.fifthRow}) }}
     </tbody>
     <tfoot>
-        <tr>
-            <td>{{ form_label(form.goodsTable.totalPiece) }}</td>
-            <td>{{ form_widget(form.goodsTable.totalPiece) }}</td>
-            <td>{{ form_widget(form.goodsTable.totalWeight) }}</td>
-        </tr>
+    <tr>
+        <td>{{ 'Total' |trans }}</td>
+        <td>{{ form_widget(form.goodsTable.totalPiece) }}</td>
+        <td>{{ form_widget(form.goodsTable.totalWeight) }}</td>
+    </tr>
     </tfoot>
 </table>

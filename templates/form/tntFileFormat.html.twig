@@ -102,8 +102,8 @@
                         {{ form_label(form.customerInformation) }}
                         {{ form_widget(form.customerInformation) }}
                     </div>
-
                 {% endblock customerArea %}
+
                 <div class="accordion" id="accordion">
                     {% block changeAddress %}
                         {{ include('form/address.html.twig', {childForm: form.changeAddress, area: 'One', headerName: 'Change-Address', stateShow: 'true'}) }}
@@ -115,6 +115,7 @@
                         {{ include('form/address.html.twig', {childForm: form.deliveryAddress, area: 'Three', headerName: 'Delivery-Address', stateShow: 'false'}) }}
                     {% endblock deliveryAddress %}
                 </div>
+
                     {% block dangerousGoods %}
                         {{ include('form/dangerousGoods.html.twig', {childForm: form.dangerousGoods}) }}
                     {% endblock dangerousGoods %}
@@ -164,6 +165,7 @@
                         </div>
                     </div>
                 </div>
+
                 {% block duty %}
                     {{ include('form/duty.html.twig', {childForm: form.duty}) }}
                 {% endblock duty %}

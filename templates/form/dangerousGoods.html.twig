@@ -1,18 +1,23 @@
-<div class="form-group">
-    <div class="dangerousGoods">
-        <span class="leftCol">
-            {{ form_label(childForm.yes) }}
-        </span>
-        <span class="rightCol">
-            {{ form_widget(childForm.yes) }}
-        </span>
-
-
-    <span class="leftCol">
-        {{ form_label(childForm.no) }}
-    </span>
-    <span class="rightCol">
-        {{ form_widget(childForm.no) }}
-    </span>
+<h5>{% trans %}Dangerous Goods{% endtrans %}</h5>
+<div class="row">
+    <div class="col-md">
+        <div class="row">
+            <div class="col-sm">
+                {{ form_label(childForm.yes) }}
+            </div>
+            <div class="col-sm">
+                {{ form_widget(childForm.yes) }}
+            </div>
+        </div>
+    </div>
+    <div class="col-md">
+        <div class="row">
+            <div class="col-sm">
+                {{ form_label(childForm.no) }}
+            </div>
+            <div class="col-sm">
+                {{ form_widget(childForm.no) }}
+            </div>
+        </div>
     </div>
 </div>

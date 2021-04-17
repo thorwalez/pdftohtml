@@ -1,49 +1,60 @@
-<div class="form-group">
-    {{ form_label(childForm.firstname) }}
-    {{ form_widget(childForm.firstname, { 'value': '' }) }}
+<div class="card">
+    <div class="card-header" id="heading{{ area }}">
+        <h5 class="mb-0">
+            <button class="btn btn-link {{ stateShow == 'true' ? '' : 'collapsed' }}" type="button" data-toggle="collapse" data-target="#collapse{{ area }}" aria-expanded={{ stateShow }} aria-controls="collapse{{ area }}">
+                {{headerName | trans}}
+            </button>
+        </h5>
+    </div>
+    <div id="collapse{{ area }}" class="collapse {{ stateShow == 'true' ? 'show' : '' }}" aria-labelledby="heading{{ area }}" data-parent="#accordion">
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        {{ form_label(childForm.firstname) }}
+                        {{ form_widget(childForm.firstname, { 'value': '' }) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(childForm.street) }}
+                        {{ form_widget(childForm.street) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(childForm.city) }}
+                        {{ form_widget(childForm.city) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(childForm.state) }}
+                        {{ form_widget(childForm.state) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(childForm.contactperson) }}
+                        {{ form_widget(childForm.contactperson) }}
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-group">
+                        {{ form_label(childForm.name) }}
+                        {{ form_widget(childForm.name) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(childForm.housenumber) }}
+                        {{ form_widget(childForm.housenumber) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(childForm.postalcode) }}
+                        {{ form_widget(childForm.postalcode) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(childForm.country) }}
+                        {{ form_widget(childForm.country) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(childForm.phonenumber) }}
+                        {{ form_widget(childForm.phonenumber) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div class="form-group">
-    {{ form_label(childForm.name) }}
-    {{ form_widget(childForm.name) }}
-</div>
-
-<div class="form-group">
-    {{ form_label(childForm.street) }}
-    {{ form_widget(childForm.street) }}
-</div>
-
-<div class="form-group">
-    {{ form_label(childForm.housenumber) }}
-    {{ form_widget(childForm.housenumber) }}
-</div>
-
-<div class="form-group">
-    {{ form_label(childForm.postalcode) }}
-    {{ form_widget(childForm.postalcode) }}
-</div>
-
-<div class="form-group">
-    {{ form_label(childForm.city) }}
-    {{ form_widget(childForm.city) }}
-</div>
-
-<div class="form-group">
-    {{ form_label(childForm.state) }}
-    {{ form_widget(childForm.state) }}
-</div>
-
-<div class="form-group">
-    {{ form_label(childForm.country) }}
-    {{ form_widget(childForm.country) }}
-</div>
-
-<div class="form-group">
-    {{ form_label(childForm.contactperson) }}
-    {{ form_widget(childForm.contactperson) }}
-</div>
-
-<div class="form-group">
-    {{ form_label(childForm.phonenumber) }}
-    {{ form_widget(childForm.phonenumber) }}
-</div>

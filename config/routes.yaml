@@ -5,3 +5,7 @@ index:
 create:
     path: /create
     controller: ThorWalez\PdfToHtml\Controller\DefaultController::create
+
+showpdf:
+    path: /showpdf
+    controller: ThorWalez\PdfToHtml\Controller\DefaultController::viewFile

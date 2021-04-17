@@ -12,6 +12,7 @@
 namespace ThorWalez\PdfToHtml\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use ThorWalez\PdfToHtml\Converters\PostScriptToPdfConverter;
@@ -86,8 +87,40 @@ class DefaultController extends AbstractController
         return $this->render('form/tntFileFormat.html.twig',
             [
                 'form' => $form->createView(),
+                'fileList' => $this->fileListViewer(),
                 'error' => $error
             ]);
 
+    }
+
+    /**
+     * @param Request $request
+     * @return BinaryFileResponse
+     */
+    public function viewFile(Request $request)
+    {
+        $query = $request->query->get('file');
+        $response = new BinaryFileResponse($query);
+        $response->headers->set('Content-type', 'application/pdf');
+
+        return $response;
+    }
+
+    /**
+     * @return array
+     */
+    private function fileListViewer() : array
+    {
+        $filePath = '/var/www/app/data/';
+        $listFileScan = \scandir($filePath);
+
+        $showFileList = [];
+        foreach ($listFileScan as $fileItem){
+            if (\strpos($fileItem,'TNT_Print') === false || \strpos($fileItem,'.ps') !== false) {
+                continue;
+            }
+            $showFileList[$fileItem] = $filePath . $fileItem;
+        }
+        return $showFileList;
     }
 }

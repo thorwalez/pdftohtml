@@ -1,6 +1,6 @@
 {
     "name": "thorwalez/pdftohtml",
-    "type": "project",
+    "type": "MIT",
     "license": "proprietary",
     "minimum-stability": "dev",
     "prefer-stable": true,

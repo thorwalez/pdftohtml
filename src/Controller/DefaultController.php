@@ -11,7 +11,6 @@
 
 namespace ThorWalez\PdfToHtml\Controller;
 
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -78,13 +77,13 @@ class DefaultController extends AbstractController
 
                     $this->addFlash( 'success','Erfolgreich gesichert');
                 }catch (\Exception $e) {
-                    \dump($e->getMessage());
+                    $error[] = $e;
                     $this->addFlash('error', $e->getMessage());
                 }
             }
         }
 
-        return $this->render('form/main.html.twig',
+        return $this->render('form/tntFileFormat.html.twig',
             [
                 'form' => $form->createView(),
                 'error' => $error

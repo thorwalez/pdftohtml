@@ -1,0 +1,44 @@
+Customer number: Kundennummer des Auftraggebers
+Invoice to receiver: Rechnung an Empfänger
+Customer number receiver: Kundennummer des Empfängers
+Customer information: Kundeninformationen
+Change-Address: Abholadresse
+Firstname: Vorname
+Name: Name
+Street: Straße
+Housenumber: Hausnummer
+City: Stadt
+Postalcode: PLZ
+State: Bundesland
+Country: Land
+Contactperson: Kontaktperson
+Phonenumber: Tel.-Nr.:
+Receiver-Address: Empfängeradresse
+Delivery-Address: Auslieferadresse
+Dangerous Goods: Gefahrgut
+Yes: Ja
+No: Nein
+Save and next Step: Erstellen
+Documents Goods: Service
+Documents: Dokumente
+Goods: Waren
+Special: Special Express
+Nine: 09:00 Express
+Twelve: 12:00 Express
+Global: Global Express
+Economy: Economy Express
+Insurance: Versicherung
+Goods value: Warenwert
+Special notes: Besondere Hinweise
+Goods Table: Ware
+Goods Description: Warenbeschreibung
+Piece: Anzahl Pack- stücke
+Weight: Gewicht kg
+Dimensions: Abmessungen
+Goods length: Länge
+Goods height: Höhe
+Goods width: Breite
+Total: Gesamt
+Sales tax id number: Ust.-ID.-Nr.:
+Curreny: Währung
+Invoice amount: Rechnungsbetrag für Verzollung

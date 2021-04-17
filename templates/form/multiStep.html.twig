@@ -1,0 +1,248 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- CSS only -->
+    {# <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"> #}
+
+    <style>
+        .address form {
+            margin: auto;
+            padding: 5% 10% 0 10%;
+            width: 60%;
+        }
+
+        .flash-success {
+            margin-bottom: 5%;
+            padding: 0 5% 0 5%;
+            background-color: #1b9448;
+        }
+
+        .flash-error {
+            margin-bottom: 5%;
+            padding: 0 5% 0 5%;
+            background-color: #761c19;
+        }
+
+        form .invoice .leftCol {
+            width: 33%;
+            float: left;
+        }
+
+        form .invoice .rightCol {
+            width: 60%;
+            float: right;
+        }
+
+        form .dangerousGoods .leftCol {
+            width: 33%;
+            float: left;
+        }
+
+        form .dangerousGoods .rightCol {
+            width: 60%;
+            float: right;
+        }
+
+        form .duty .leftCol {
+            width: 33%;
+            float: left;
+        }
+
+        form .duty .rightCol {
+            width: 60%;
+            float: right;
+        }
+
+        form .dimensions .leftCol {
+            width: 33%;
+            float: left;
+        }
+
+        form .dimensions .middleCol {
+            width: 33%;
+            float: right;
+        }
+
+        form .dimensions .rightCol {
+            width: 33%;
+            float: right;
+        }
+
+    </style>
+{% endblock %}
+
+{% block title %}TNT create{% endblock %}
+
+{% block body %}
+
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#changeAddress" type="button" role="tab" aria-controls="changeAddress" aria-selected="false">Change Address</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="receiverAddress-tab" data-bs-toggle="tab" data-bs-target="#receiverAddress" type="button" role="tab" aria-controls="receiverAddress" aria-selected="false">Receiver Address</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="deliveryAddress-tab" data-bs-toggle="tab" data-bs-target="#deliveryAddress" type="button" role="tab" aria-controls="deliveryAddress" aria-selected="false"> Delivery Address</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="dangerousGoods-tab" data-bs-toggle="tab" data-bs-target="#dangerousGoods" type="button" role="tab" aria-controls="dangerousGoods" aria-selected="false"> Dangerous Goods</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="service-tab" data-bs-toggle="tab" data-bs-target="#service" type="button" role="tab" aria-controls="service" aria-selected="false"> Service </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="option-tab" data-bs-toggle="tab" data-bs-target="#option" type="button" role="tab" aria-controls="option" aria-selected="false"> Option</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="specialNotes-tab" data-bs-toggle="tab" data-bs-target="#specialNotes" type="button" role="tab" aria-controls="specialNotes" aria-selected="false"> Special Notes</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="goodsTabel-tab" data-bs-toggle="tab" data-bs-target="#goodsTabel" type="button" role="tab" aria-controls="goodsTabel" aria-selected="false"> Goods Tabel</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="duty-tab" data-bs-toggle="tab" data-bs-target="#duty" type="button" role="tab" aria-controls="duty" aria-selected="false"> Duty </button>
+        </li>
+    </ul>
+
+     <div class="address form">
+        {{ form_start(form) }}
+         {% for label, messages in app.flashes(['success', 'error']) %}
+             {% for message in messages %}
+                 <div class="flash-{{ label }}">
+                     {{ message }}
+                 </div>
+             {% endfor %}
+         {% endfor %}
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                {% block customerArea %}
+                    <div class="form-group">
+                        {{ form_label(form.customerNumber) }}
+                        {{ form_widget(form.customerNumber) }}
+                    </div>
+
+                    {% block invoice %}
+                        {{ include('form/invoice.html.twig', {childForm: form.invoice}) }}
+                    {% endblock invoice %}
+
+                    <div class="form-group">
+                        {{ form_label(form.customerInformation) }}
+                        {{ form_widget(form.customerInformation) }}
+                    </div>
+
+                {% endblock customerArea %}
+            </div>
+            <div class="tab-pane" id="changeAddress" role="tabpanel" aria-labelledby="changeAddress-tab">
+                {% block changeAddress %}
+                    <div>
+                        {{ include('form/address.html.twig', {childForm: form.changeAddress}) }}
+                    </div>
+                {% endblock changeAddress %}
+            </div>
+            <div class="tab-pane" id="receiverAddress" role="tabpanel" aria-labelledby="receiverAddress-tab">
+                {% block receiverAddress %}
+                    {{ include('form/address.html.twig', {childForm: form.receiverAddress}) }}
+                {% endblock receiverAddress %}
+            </div>
+            <div class="tab-pane" id="deliveryAddress" role="tabpanel" aria-labelledby="deliveryAddress-tab">
+                {% block deliveryAddress %}
+                    {{ include('form/address.html.twig', {childForm: form.deliveryAddress}) }}
+                {% endblock deliveryAddress %}
+            </div>
+            <div class="tab-pane" id="dangerousGoods" role="tabpanel" aria-labelledby="dangerousGoods-tab">
+                {% block dangerousGoods %}
+                    {{ include('form/dangerousGoods.html.twig', {childForm: form.dangerousGoods}) }}
+                {% endblock dangerousGoods %}
+            </div>
+            <div class="tab-pane" id="service" role="tabpanel" aria-labelledby="service-tab">
+                {% block service %}
+                    <div>
+                        {{ include('form/service.html.twig', {childForm: form.services}) }}
+                    </div>
+                {% endblock service %}
+            </div>
+            <div class="tab-pane" id="option" role="tabpanel" aria-labelledby="option-tab">
+                {% block option %}
+                    <div class="form-group">
+                        {{ form_label(form.options.priority.priority) }}
+                        {{ form_widget(form.options.priority.priority) }}
+
+                        {{ form_label(form.options.insurance.insurance) }}
+                        {{ form_widget(form.options.insurance.insurance) }}
+
+                        {{ form_label(form.options.insurance.goodsValue) }}
+                        {{ form_widget(form.options.insurance.goodsValue) }}
+
+                    </div>
+                {% endblock option %}
+            </div>
+            <div class="tab-pane" id="specialNotes" role="tabpanel" aria-labelledby="specialNotes-tab">
+                <div class="form-group">
+                    {{ form_label(form.specialNotes) }}
+                    {{ form_widget(form.specialNotes) }}
+                </div>
+            </div>
+            <div class="tab-pane" id="goodsTabel" role="tabpanel" aria-labelledby="goodsTabel-tab">
+                {% block goodsTabel %}
+                    <div>
+                        {{ include('form/table/goodstable.html.twig', {childForm: form.goodsTable}) }}
+                    </div>
+                {% endblock goodsTabel %}
+            </div>
+            <div class="tab-pane" id="duty" role="tabpanel" aria-labelledby="duty-tab">
+                {% block duty %}
+                    <div>
+                        {{ include('form/duty.html.twig', {childForm: form.duty}) }}
+                    </div>
+                {% endblock duty %}
+            </div>
+        </div>
+         {{ form_widget(form._token) }}
+         {# <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" > #}
+
+         {{ form_widget(form.create) }}
+
+         {{ form_end(form, {'render_rest': false}) }}
+    </div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+    {# <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> #}
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+            crossorigin="anonymous"></script>
+    <script>
+        function calculatorPiece() {
+            var totalPiece = document.getElementsByClassName('totalPiece')[0];
+            var goodsPiece = document.getElementsByClassName('goodsPiece');
+
+            var calValue = 0;
+            for (i = 0; i < goodsPiece.length; i++) {
+                calValue += goodsPiece[i].value * 1;
+            }
+            totalPiece.value = calValue;
+        }
+
+        function calculatorWeight() {
+            var totalWeight = document.getElementsByClassName('totalWeight')[0];
+            var goodsWeight = document.getElementsByClassName('goodsWeight');
+
+            var calValue = 0;
+            for (i = 0; i < goodsWeight.length; i++) {
+                calValue += goodsWeight[i].value.replace(',','.') * 1;
+            }
+            totalWeight.value = calValue.toFixed(2);
+        }
+    </script>
+
+{% endblock %}

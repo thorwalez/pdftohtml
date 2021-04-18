@@ -1,11 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!-- CSS only -->
-    {# <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous"> #}
-
+    {{ parent() }}
     <style>
         .address form {
             margin: auto;
@@ -93,7 +89,7 @@
             </div>
 
             {% block invoice %}
-                {{ include('form/invoice.html.twig', {childForm: form.invoice}) }}
+                {{ include('../form/invoice.html.twig', {childForm: form.invoice}) }}
             {% endblock invoice %}
 
             <div class="form-group">
@@ -105,25 +101,25 @@
 
         {% block changeAddress %}
             <div>
-                {{ include('form/address.html.twig', {childForm: form.changeAddress}) }}
+                {{ include('../form/address.html.twig', {childForm: form.changeAddress}) }}
             </div>
         {% endblock changeAddress %}
 
         {% block receiverAddress %}
-            {{ include('form/address.html.twig', {childForm: form.receiverAddress}) }}
+            {{ include('../form/address.html.twig', {childForm: form.receiverAddress}) }}
         {% endblock receiverAddress %}
 
         {% block deliveryAddress %}
-            {{ include('form/address.html.twig', {childForm: form.deliveryAddress}) }}
+            {{ include('../form/address.html.twig', {childForm: form.deliveryAddress}) }}
         {% endblock deliveryAddress %}
 
         {% block dangerousGoods %}
-            {{ include('form/dangerousGoods.html.twig', {childForm: form.dangerousGoods}) }}
+            {{ include('../form/dangerousGoods.html.twig', {childForm: form.dangerousGoods}) }}
         {% endblock dangerousGoods %}
 
         {% block service %}
             <div>
-                {{ include('form/service.html.twig', {childForm: form.services}) }}
+                {{ include('../form/service.html.twig', {childForm: form.services}) }}
             </div>
         {% endblock service %}
         {% block option %}
@@ -147,12 +143,12 @@
 
         {% block goodsTabel %}
             <div>
-                {{ include('form/table/goodstable.html.twig', {childForm: form.goodsTable}) }}
+                {{ include('../form/table/goodstable.html.twig', {childForm: form.goodsTable}) }}
             </div>
         {% endblock goodsTabel %}
         {% block duty %}
             <div>
-                {{ include('form/duty.html.twig', {childForm: form.duty}) }}
+                {{ include('../form/duty.html.twig', {childForm: form.duty}) }}
             </div>
         {% endblock duty %}
         {{ form_widget(form._token) }}
@@ -165,11 +161,7 @@
 {% endblock %}
 
 {% block javascripts %}
-    {# <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> #}
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-            crossorigin="anonymous"></script>
+    {{ parent() }}
     <script>
         function calculatorPiece() {
             var totalPiece = document.getElementsByClassName('totalPiece')[0];

@@ -18,7 +18,6 @@ Delivery-Address: Auslieferadresse
 Dangerous Goods: Gefahrgut
 Yes: Ja
 No: Nein
-Save and next Step: Erstellen
 Documents Goods: Service
 Documents: Dokumente
 Goods: Waren
@@ -45,3 +44,6 @@ Invoice amount: Rechnungsbetrag für Verzollung
 Print File List: Datei Liste zum Anzeigen und Drucken
 Welcome to: Willkommen zur
 The creation of digital waybills for TNT: Digitalen Frachtbrief Erstellung für TNT
+#buttons
+Save: Erstellen
+Reset: Bereinigen

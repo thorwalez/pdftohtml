@@ -37,8 +37,6 @@ class DefaultController extends AbstractController
 
     public function create(Request $request)
     {
-        $error = '';
-
         $form = $this->createForm(
             Main::class,
             null,
@@ -74,7 +72,6 @@ class DefaultController extends AbstractController
 
                     $this->addFlash( 'success','Erfolgreich gesichert');
                 }catch (\Exception $e) {
-                    $error[] = $e->getMessage();
                     $this->addFlash('error', $e->getMessage());
                 }
             }
@@ -84,7 +81,6 @@ class DefaultController extends AbstractController
             [
                 'form' => $form->createView(),
                 'fileList' => $this->fileListViewer(),
-                'error' => $error
             ]);
 
     }

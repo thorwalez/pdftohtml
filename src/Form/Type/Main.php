@@ -29,7 +29,6 @@ class Main extends AbstractType
         $resolver->setDefaults(
             array(
                 'data_class' => null,
-                 'require_due_date' => false,
             )
         );
     }
@@ -41,11 +40,11 @@ class Main extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('customerNumber', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control', 'autofocus' => true]])
+            ->add('customerNumber', TextType::class, ['attr' => ['class' => 'form-control', 'autofocus' => true]])
             ->add('invoice', Invoice::class)
-            ->add('customerInformation', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
+            ->add('customerInformation', TextType::class, ['attr' => ['class' => 'form-control']])
             ->add('changeAddress', Addresses::class)
-            ->add('receiverAddress', Addresses::class)
+            ->add('receiverAddress', Addresses::class, ['required' => false, 'attr' => ['class' => 'form-control']])
             ->add('deliveryAddress', Addresses::class)
             ->add('dangerousGoods', DangerousGoodsType::class)
             ->add('services', Service::class)

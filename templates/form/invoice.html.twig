@@ -1,13 +1,13 @@
 <div class="form-group">
-    <div class="invoice">
-        <span class="leftCol">
-        {{ form_label(childForm.invoiceToReceiver) }}
-        {{ form_widget(childForm.invoiceToReceiver) }}
-        </span>
-        <span class="rightCol">
-            {{ form_label(childForm.customerNumberReceiver) }}
-            {{ form_widget(childForm.customerNumberReceiver, { 'value': '' }) }}
-        </span>
-    </div>
+        <div class="row">
+                <div class="col-sm">
+                        {{ form_label(childForm.invoiceToReceiver) }}
+                        {{ form_widget(childForm.invoiceToReceiver) }}
+                </div>
+                <div class="col-sm">
+                    {{ form_label(childForm.customerNumberReceiver) }}
+                    {{ form_widget(childForm.customerNumberReceiver, { 'value': '' }) }}
+                </div>
+        </div>
 </div>
 

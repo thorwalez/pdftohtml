@@ -13,6 +13,7 @@ namespace ThorWalez\PdfToHtml\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\ResetType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -52,8 +53,8 @@ class Main extends AbstractType
             ->add('specialNotes', TextareaType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
             ->add('goodsTable', GoodsTable::class)
             ->add('duty', DutyType::class)
-            ->add('create', SubmitType::class, ['attr' => ['class' => 'btn btn-lg btn-primary','value'=>'create'], 'label' => 'Save and next Step' ]);
-
+            ->add('create', SubmitType::class, ['attr' => ['class' => 'btn btn-primary btn-block','value'=>'create'], 'label' => 'Save' ])
+            ->add('reset', ResetType::class, ['attr' => ['class' => 'btn btn-secondary btn-block','value'=>'reset'], 'label' => 'Reset']);
 
         parent::buildForm($builder, $options);
     }

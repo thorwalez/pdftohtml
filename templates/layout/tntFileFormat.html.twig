@@ -4,23 +4,8 @@
     {{ parent() }}
     <style>
         .address form {
-            /*margin: auto;*/
             padding: 5% 0 5% 0;
-            /*width: auto;*/
         }
-
-        .flash-success {
-            margin-bottom: 5%;
-            padding: 0 5% 0 5%;
-            background-color: #1b9448;
-        }
-
-        .flash-error {
-            margin-bottom: 5%;
-            padding: 0 5% 0 5%;
-            background-color: #761c19;
-        }
-
         form .invoice .leftCol {
             width: 33%;
             float: left;
@@ -65,7 +50,9 @@
             width: 33%;
             float: right;
         }
-
+        :required {
+            border-color: red;
+        }
     </style>
 {% endblock %}
 
@@ -77,9 +64,17 @@
         {{ form_start(form) }}
         {% for label, messages in app.flashes(['success', 'error']) %}
             {% for message in messages %}
-                <div class="flash-{{ label }}">
-                    {{ message }}
-                </div>
+                {% if label == 'error' %}
+                    <div  class="alert alert-danger" role="alert">
+                        {{ message }}
+                    </div>
+                {% endif %}
+                {% if label == 'success' %}
+                    <div class="alert alert-success" role="alert">
+                        {{ message }}
+                    </div>
+                {% endif %}
+
             {% endfor %}
         {% endfor %}
 

@@ -30,7 +30,6 @@ class Addresses extends AbstractType
         $resolver->setDefaults(
             array(
                 'data_class' => null,
-                'require_due_date' => false,
             )
         );
     }
@@ -42,16 +41,16 @@ class Addresses extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstname', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
-            ->add('name', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
-            ->add('street', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
-            ->add('housenumber', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
-            ->add('postalcode', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
-            ->add('city', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
-            ->add('state', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
-            ->add('country', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
-            ->add('contactperson', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']])
-            ->add('phonenumber', TextType::class, ['required' => false, 'attr' => ['class' => 'form-control']]);
+            ->add('firstname', TextType::class, ['attr' => ['class' => 'form-control']])
+            ->add('name', TextType::class, ['attr' => ['class' => 'form-control']])
+            ->add('street', TextType::class, ['attr' => ['class' => 'form-control']])
+            ->add('housenumber', TextType::class, ['attr' => ['class' => 'form-control']])
+            ->add('postalcode', TextType::class, ['attr' => ['class' => 'form-control']])
+            ->add('city', TextType::class, ['attr' => ['class' => 'form-control']])
+            ->add('state', TextType::class, ['attr' => ['class' => 'form-control']])
+            ->add('country', TextType::class, ['attr' => ['class' => 'form-control']])
+            ->add('contactperson', TextType::class, ['attr' => ['class' => 'form-control']])
+            ->add('phonenumber', TextType::class, ['attr' => ['class' => 'form-control']]);
 
 
         parent::buildForm($builder, $options);

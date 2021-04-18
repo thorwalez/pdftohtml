@@ -32,11 +32,7 @@ class DefaultController extends AbstractController
 
     public function index() : Response
     {
-        $content = 'class: ' . __CLASS__;
-
-        return new Response(
-            "<html><body>$content</body></html>"
-        );
+        return $this->render('layout/welcome.html.twig');
     }
 
     public function create(Request $request)
@@ -78,13 +74,13 @@ class DefaultController extends AbstractController
 
                     $this->addFlash( 'success','Erfolgreich gesichert');
                 }catch (\Exception $e) {
-                    $error[] = $e;
+                    $error[] = $e->getMessage();
                     $this->addFlash('error', $e->getMessage());
                 }
             }
         }
 
-        return $this->render('form/tntFileFormat.html.twig',
+        return $this->render('layout/tntFileFormat.html.twig',
             [
                 'form' => $form->createView(),
                 'fileList' => $this->fileListViewer(),

@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    <style>
+        .welcome {
+            margin-top: 10%;
+        }
+    </style>
+
+{% endblock stylesheets %}
+
+{% block body %}
+<div class="d-flex h-100 text-center text-black center-block welcome">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <main class="px-3">
+            <h1>{{ 'Welcome to'|trans }}</h1>
+            <p class="lead">{{ 'The creation of digital waybills for TNT'|trans }}</p>
+            <p class="lead">
+                <a href="{{path('create')}}" class="btn btn-lg btn-secondary fw-bold border-black bg-black">Start</a>
+            </p>
+        </main>
+
+
+
+    </div>
+</div>
+{% endblock body %}

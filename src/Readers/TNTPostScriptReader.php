@@ -22,6 +22,7 @@ use ThorWalez\PdfToHtml\Exceptions\Error\FileNotFoundException;
 class TNTPostScriptReader
 {
     const PATH_TO_FILE = '/var/www/app/data/';
+    const ALTERNATE_PATH_TO_FILE = '/data/';
 
     /** @var string */
     private $filename;
@@ -41,9 +42,13 @@ class TNTPostScriptReader
      */
     public function read()
     {
-        $this->isFileExist();
-
-        $content = \file_get_contents(self::PATH_TO_FILE . $this->filename);
+        try {
+            $this->isFileExist();
+            $content = \file_get_contents(self::PATH_TO_FILE . $this->filename);
+        }catch (FileNotFoundException $exception){
+            $this->isFileAlternateExist();
+            $content = \file_get_contents(self::ALTERNATE_PATH_TO_FILE . $this->filename);
+        }
 
         $this->isFileEmpty($content);
 
@@ -56,6 +61,16 @@ class TNTPostScriptReader
     protected function isFileExist()
     {
         if (\file_exists(self::PATH_TO_FILE . $this->filename) == false) {
+            throw new FileNotFoundException("Datei: $this->filename konnten nicht gefunden!");
+        }
+    }
+
+    /**
+     * @throws FileNotFoundException
+     */
+    protected function isFileAlternateExist()
+    {
+        if (\file_exists(self::ALTERNATE_PATH_TO_FILE . $this->filename) == false) {
             throw new FileNotFoundException("Datei: $this->filename konnten nicht gefunden!");
         }
     }

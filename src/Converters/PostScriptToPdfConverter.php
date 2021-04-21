@@ -35,7 +35,5 @@ class PostScriptToPdfConverter
         $output = [];
 
         \exec($command, $output , $resultCode);
-
-        \dump($output, $resultCode);
     }
 }

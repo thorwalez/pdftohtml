@@ -71,6 +71,8 @@ class DefaultController extends AbstractController
                     $converter->convert();
 
                     $this->addFlash( 'success','Erfolgreich gesichert');
+
+                    return $this->redirectToRoute('create');
                 }catch (\Exception $e) {
                     $this->addFlash('error', $e->getMessage());
                 }

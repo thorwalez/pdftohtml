@@ -100,7 +100,7 @@
             "@coverage",
             "@phpmetrics"
         ],
-        "test": "phpunit --colors=always --exclude-group=databasetest",
+        "test": "phpunit --colors=always --exclude-group=databasetest --exclude-group=notForAction",
         "test-db": "phpunit --colors=always --group=databasetest",
         "test-debug": "phpunit --colors=always --debug",
         "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",

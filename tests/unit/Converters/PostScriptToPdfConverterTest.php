@@ -21,6 +21,9 @@ newpath
 stroke
 showpage';
 
+    /**
+     * @group notForAction
+     */
     public function testConvertRun()
     {
         $path = \dirname(__DIR__, 2) . '/_data';

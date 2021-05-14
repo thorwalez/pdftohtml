@@ -2,11 +2,11 @@
 /**
  * Copyright (c) 2021.
  * Created By
- * @author Mike Hartl
+ * @author    Mike Hartl
  * @copyright 2021  Mike Hartl All rights reserved
- * @license  The source code of this document is proprietary work, and is licensed for distribution or use.
- * @created 4.04.2021
- * @version 0.0.0
+ * @license   The source code of this document is proprietary work, and is licensed for distribution or use.
+ * @created   4.04.2021
+ * @version   0.0.0
  */
 
 namespace ThorWalez\PdfToHtml\Calculator;
@@ -21,12 +21,12 @@ class TotalCalculator
 
     const POINT_PATTERN = '.';
 
-    /** @var array */
+    /** @var array<string> $singleValues */
     private $singleValues = [];
 
     /**
      * TotalCalculator constructor.
-     * @param array $singleValues
+     * @param array<string> $singleValues
      */
     public function __construct(array $singleValues)
     {

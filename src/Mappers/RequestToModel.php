@@ -2,17 +2,18 @@
 /**
  * Copyright (c) 2021.
  * Created By
- * @author Mike Hartl
+ * @author    Mike Hartl
  * @copyright 2021  Mike Hartl All rights reserved
- * @license  The source code of this document is proprietary work, and is licensed for distribution or use.
- * @created 4.04.2021
- * @version 0.0.0
+ * @license   The source code of this document is proprietary work, and is licensed for distribution or use.
+ * @created   4.04.2021
+ * @version   0.0.0
  */
 
 namespace ThorWalez\PdfToHtml\Mappers;
 
 
 use ThorWalez\PdfToHtml\Calculator\TotalCalculator;
+use ThorWalez\PdfToHtml\Exceptions\Error\RequestIsNotValidException;
 use ThorWalez\PdfToHtml\Models\MainModel;
 
 /**
@@ -24,11 +25,12 @@ class RequestToModel
     /**
      * @param array $requestData
      * @return MainModel
+     * @throws RequestIsNotValidException
      */
     public function map(array $requestData) : MainModel
     {
+        $this->isValid($requestData);
 
-        //        \dump($requestData);die;
         $model = new MainModel();
 
         $model->setClientNumber($requestData['customerNumber']);
@@ -127,5 +129,16 @@ class RequestToModel
         $calculator = new TotalCalculator($totalWeightList);
 
         return $calculator->total();
+    }
+
+    /**
+     * @param array $data
+     * @throws RequestIsNotValidException
+     */
+    private function isValid(array $data)
+    {
+        if (empty($data)) {
+            throw new RequestIsNotValidException('Request is Empty');
+        }
     }
 }

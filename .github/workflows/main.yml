@@ -1,8 +1,8 @@
 name: CI
 
-on:
-  push:
-    branches: [ ${{ github.ref }} ]
+on: push
+#  push:
+#    branches: [ main ]
 
 jobs:
   build:

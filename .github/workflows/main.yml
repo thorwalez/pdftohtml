@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ unit_testing ]
+    branches: [ ${{ github.ref }} ]
 
 jobs:
   build:
@@ -14,8 +14,8 @@ jobs:
       - uses: actions/checkout@v2
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
 
-      - name: Validate composer.json and composer.lock
-        run: composer validate --strict
+#      - name: Validate composer.json and composer.lock
+#        run: composer validate --strict
 
       - name: Cache Composer packages
         id: composer-cache

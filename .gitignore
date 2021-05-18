@@ -1,5 +1,7 @@
 
 ###> symfony/framework-bundle ###
+/bin
+!/bin/console
 /.env
 /.env.test
 /.env.local

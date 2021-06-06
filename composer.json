@@ -50,6 +50,8 @@
         "codeception/module-asserts": "^1.3",
         "codeception/module-symfony": "^2.0",
         "codeception/module-webdriver": "^1.2",
+        "phpmetrics/phpmetrics": "^2.7",
+        "phpstan/phpstan": "^0.12.87",
         "symfony/browser-kit": "^5.2",
         "symfony/css-selector": "^5.2",
         "symfony/phpunit-bridge": "^5.2",
@@ -72,7 +74,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "ThorWalez\\PdfToHtml\\Test\\": "tests/"
+            "ThorWalez\\PdfToHtml\\Test\\": "tests/unit/"
         }
     },
     "replace": {
@@ -90,6 +92,22 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
+        ],
+        "check": [
+            "@test",
+            "@test-coverage",
+            "@coverage",
+            "@phpmetrics"
+        ],
+        "test": "phpunit --colors=always --exclude-group=databasetest --exclude-group=notForAction",
+        "test-db": "phpunit --colors=always --group=databasetest",
+        "test-debug": "phpunit --colors=always --debug",
+        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
+        "coverage": [
+            "phpunit --coverage-html=build/reports/coverage_html  --exclude-group=databasetest --coverage-xml=build/reports/coverage-xml --coverage-clover build/reports/clover.xml"
+        ],
+        "phpmetrics": [
+            "phpmetrics --plugins=./vendor/phpmetrics/composer-extension/ComposerExtension.php  --exclude=./tests  --junit=/var/www/app/build/reports/coverage-xml/index.xml --report-html=build/phpmetris_report.html ./src,./composer.json,./composer.lock"
         ]
     },
     "conflict": {

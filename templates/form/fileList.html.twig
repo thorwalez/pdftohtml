@@ -11,7 +11,7 @@
             <div class="card-body">
                 {% for fileName, file in fileList %}
 
-                    <li><a href="{{path('showpdf', { 'file': file} ) }}" target="_blank">{{ fileName }}</a></li>
+                    <li><a href="{{path('showpdf', { 'filename': fileName} ) }}" target="_blank">{{ fileName }}</a><a class="remove-button" href="{{path('removepdf', { 'filename': fileName} ) }}">{{ 'remove'|trans }}</a></li>
                 {% endfor %}
             </div>
         </div>

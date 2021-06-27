@@ -6,6 +6,12 @@
         .address form {
             padding: 5% 0 5% 0;
         }
+
+        .address .footer {
+            margin-top: 20px;
+        }
+
+        /*
         form .invoice .leftCol {
             width: 33%;
             float: left;
@@ -15,7 +21,17 @@
             width: 60%;
             float: right;
         }
+        */
+        .dangerousGoods {
+            margin-top: 10px;
+        }
+        .dangerousGoods h5 {
+            text-align: center;
+            background-color: rgba(0,0,0,.03);
+            padding: 1%;
+        }
 
+        /*
         form .dangerousGoods .leftCol {
             width: 33%;
             float: left;
@@ -24,6 +40,18 @@
         form .dangerousGoods .rightCol {
             width: 60%;
             float: right;
+        }
+        */
+
+        .color-box label
+        {
+            background-color: rgba(0,0,0,.03);
+            padding: 1%;
+            width: 100%;
+        }
+
+        .duty {
+            margin-top: 10px;
         }
 
         form .duty .leftCol {
@@ -52,6 +80,10 @@
         }
         :required {
             border-color: red;
+        }
+
+        .remove-button {
+            float: right;
         }
     </style>
 {% endblock %}
@@ -108,9 +140,11 @@
                     {% endblock deliveryAddress %}
                 </div>
 
-                    {% block dangerousGoods %}
-                        {{ include('form/dangerousGoods.html.twig', {childForm: form.dangerousGoods}) }}
-                    {% endblock dangerousGoods %}
+                <div class="dangerousGoods">
+                {% block dangerousGoods %}
+                    {{ include('form/dangerousGoods.html.twig', {childForm: form.dangerousGoods}) }}
+                {% endblock dangerousGoods %}
+                </div>
             </div>
             <div class="col-sm">
                  <div class="row">
@@ -121,7 +155,7 @@
                     </div>
                     <div class="col-sm">
                     {% block option %}
-                        <div class="form-group">
+                        <div class="form-group color-box">
                             {{ form_label(form.options.priority.priority) }}
                             {{ form_widget(form.options.priority.priority) }}
 
@@ -158,9 +192,11 @@
                     </div>
                 </div>
 
+                <div class="duty">
                 {% block duty %}
                     {{ include('form/duty.html.twig', {childForm: form.duty}) }}
                 {% endblock duty %}
+                </div>
             </div>
         </div>
         <div class="footer form">

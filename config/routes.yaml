@@ -9,3 +9,7 @@ create:
 showpdf:
     path: /showpdf
     controller: ThorWalez\PdfToHtml\Controller\DefaultController::viewFile
+
+removepdf:
+    path: /removepdf
+    controller: ThorWalez\PdfToHtml\Controller\DefaultController::removeFile

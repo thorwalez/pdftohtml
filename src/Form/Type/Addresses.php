@@ -43,15 +43,15 @@ class Addresses extends AbstractType
         $index = 1;
         $builder
             ->add('firstname', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => $index]])
-            ->add('name', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => $index++]])
-            ->add('street', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => $index++]])
-            ->add('housenumber', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => $index++]])
-            ->add('city', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => $index++]])
-            ->add('postalcode', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => $index++]])
-            ->add('state', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => $index++]])
-            ->add('country', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => $index++]])
-            ->add('contactperson', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => $index++]])
-            ->add('phonenumber', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => $index++]]);
+            ->add('name', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => ++$index]])
+            ->add('street', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => ++$index]])
+            ->add('housenumber', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => ++$index]])
+            ->add('city', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => ++$index]])
+            ->add('postalcode', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => ++$index]])
+            ->add('state', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => ++$index]])
+            ->add('country', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => ++$index]])
+            ->add('contactperson', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => ++$index]])
+            ->add('phonenumber', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => ++$index]]);
 
 
         parent::buildForm($builder, $options);

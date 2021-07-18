@@ -40,17 +40,18 @@ class Addresses extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $index = 1;
         $builder
-            ->add('firstname', TextType::class, ['attr' => ['class' => 'form-control']])
-            ->add('name', TextType::class, ['attr' => ['class' => 'form-control']])
-            ->add('street', TextType::class, ['attr' => ['class' => 'form-control']])
-            ->add('housenumber', TextType::class, ['attr' => ['class' => 'form-control']])
-            ->add('postalcode', TextType::class, ['attr' => ['class' => 'form-control']])
-            ->add('city', TextType::class, ['attr' => ['class' => 'form-control']])
-            ->add('state', TextType::class, ['attr' => ['class' => 'form-control']])
-            ->add('country', TextType::class, ['attr' => ['class' => 'form-control']])
-            ->add('contactperson', TextType::class, ['attr' => ['class' => 'form-control']])
-            ->add('phonenumber', TextType::class, ['attr' => ['class' => 'form-control']]);
+            ->add('firstname', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => $index]])
+            ->add('name', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => ++$index]])
+            ->add('street', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => ++$index]])
+            ->add('housenumber', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => ++$index]])
+            ->add('city', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => ++$index]])
+            ->add('postalcode', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => ++$index]])
+            ->add('state', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => ++$index]])
+            ->add('country', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => ++$index]])
+            ->add('contactperson', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => ++$index]])
+            ->add('phonenumber', TextType::class, ['attr' => ['class' => 'form-control', 'tabindex' => ++$index]]);
 
 
         parent::buildForm($builder, $options);

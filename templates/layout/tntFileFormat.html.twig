@@ -94,10 +94,15 @@
     {{ include('form/fileList.html.twig', {fileList: fileList})}}
     <div class="container address form">
         {{ form_start(form) }}
-        {% for label, messages in app.flashes(['success', 'error']) %}
+        {% for label, messages in app.flashes(['success', 'error', 'warning']) %}
             {% for message in messages %}
                 {% if label == 'error' %}
                     <div  class="alert alert-danger" role="alert">
+                        {{ message }}
+                    </div>
+                {% endif %}
+                {% if label == 'warning' %}
+                    <div  class="alert alert-warning" role="alert">
                         {{ message }}
                     </div>
                 {% endif %}

@@ -2,7 +2,6 @@
 /**
  * Copyright (c) 2021.
  * Created By
- *
  * @author    Mike Hartl
  * @copyright 2021  Mike Hartl All rights reserved
  * @license   The source code of this document is proprietary work, and is licensed for distribution or use.
@@ -12,6 +11,7 @@
 
 namespace ThorWalez\PdfToHtml\Controller;
 
+use Psr\Log\LoggerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -25,11 +25,11 @@ use ThorWalez\PdfToHtml\Models\MainModel;
 use ThorWalez\PdfToHtml\PostScripts\Creator\Insert;
 use ThorWalez\PdfToHtml\Readers\TNTPostScriptReader;
 use ThorWalez\PdfToHtml\Viewer\FileListViewer;
+use ThorWalez\PdfToHtml\Workers\WorkerProcessRunner;
 use ThorWalez\PdfToHtml\Writers\TNTPostScriptWriter;
 
 /**
  * Class DefaultController
- *
  * @package ThorWalez\PdfToHtml\Controller
  */
 class DefaultController extends AbstractController
@@ -38,18 +38,22 @@ class DefaultController extends AbstractController
     /**
      * @return Response
      */
-    public function index(): Response
+    public function index() : Response
     {
         return $this->render('layout/welcome.html.twig');
     }
 
     /**
-     * @param Request $request
-     *
+     * @param Request         $request
+     * @param LoggerInterface $logger
      * @return RedirectResponse|Response
      */
-    public function create(Request $request)
+    public function create(Request $request, LoggerInterface $logger)
     {
+
+        $workerProcess = new WorkerProcessRunner($logger, $this->container->get('session')->getFlashBag());
+        $workerProcess->start();
+
         $form = $this->createForm(
             Main::class,
             null,
@@ -107,13 +111,12 @@ class DefaultController extends AbstractController
 
     /**
      * @param Request $request
-     *
      * @return BinaryFileResponse
      */
     public function viewFile(Request $request)
     {
         $filename = $request->query->get('filename');
-        $response = new BinaryFileResponse(FileListViewer::FILE_PATH . $filename);
+        $response = new BinaryFileResponse(FileListViewer::FILE_PATH.$filename);
         $response->headers->set('Content-type', 'application/pdf');
 
         return $response;
@@ -121,7 +124,6 @@ class DefaultController extends AbstractController
 
     /**
      * @param Request $request
-     *
      * @return RedirectResponse
      */
     public function removeFile(Request $request)

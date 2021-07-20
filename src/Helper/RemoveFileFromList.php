@@ -26,6 +26,8 @@ class RemoveFileFromList
     public function remove(string $filename)
     {
         $file = self::FILE_PATH . $filename;
-        \rename($file, \mb_substr($file,0,-3) . 'remove');
+        if (\rename($file, \mb_substr($file,0,-3) . 'remove') == false){
+            throw new FileNoteRenameException('File could not be renamed.');
+        }
     }
 }

@@ -115,11 +115,16 @@ class DefaultController extends AbstractController
      */
     public function viewFile(Request $request)
     {
-        $filename = $request->query->get('filename');
-        $response = new BinaryFileResponse(FileListViewer::FILE_PATH.$filename);
-        $response->headers->set('Content-type', 'application/pdf');
+        try {
+            $filename = $request->query->get('filename');
+            $response = new BinaryFileResponse(FileListViewer::FILE_PATH.$filename);
+            $response->headers->set('Content-type', 'application/pdf');
 
-        return $response;
+            return $response;
+        }catch (\Exception $ex){
+//            $this->addFlash('error', 'File no longer exists.');
+            return $this->render('error/error.html.twig');
+        }
     }
 
     /**

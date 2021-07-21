@@ -61,8 +61,8 @@ class RemoveNewerFilesFilter implements Filter
     private function isTimeStampNewerAs(\DateTime $timeStamp): bool
     {
         $dateNow = new \DateTime('NOW');
-        $dateNow->modify('-3 hours');
+        $dateNow->modify('-1 hours');
 
-        return $timeStamp >= $dateNow;
+        return $dateNow <= $timeStamp;
     }
 }

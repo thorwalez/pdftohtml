@@ -122,7 +122,6 @@ class DefaultController extends AbstractController
 
             return $response;
         }catch (\Exception $ex){
-//            $this->addFlash('error', 'File no longer exists.');
             return $this->render('error/error.html.twig');
         }
     }

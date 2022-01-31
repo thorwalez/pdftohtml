@@ -93,5 +93,3 @@ https://app.deineFirma.de
 ```
 Darauf sollte eine Seite angezeigt werden mit "Willkommen zur..." und einem Start-Button, darauf klicken und das Formular für den Frachtbrief wird angezeigt.
 Probe lauf einfach alle Felder die Rot umrahmt sind ausfüllen und auf erstellen klicken.
-user.email=mike_hartl@gmx.de
-user.name=Mike Hartl

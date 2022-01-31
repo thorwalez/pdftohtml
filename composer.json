@@ -101,7 +101,7 @@
         "test-debug": "phpunit --colors=always --debug",
         "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
         "coverage": [
-            "phpunit --coverage-html=build/reports/coverage_html  --exclude-group=databasetest --coverage-xml=build/reports/coverage-xml --coverage-clover build/reports/clover.xml"
+            "phpunit --coverage-html=build/reports/coverage_html --exclude-group=databasetest --coverage-xml=build/reports/coverage-xml --coverage-clover build/reports/clover.xml"
         ],
         "phpmetrics": [
             "phpmetrics --plugins=./vendor/phpmetrics/composer-extension/ComposerExtension.php  --exclude=./tests  --junit=/var/www/app/build/reports/coverage-xml/index.xml --report-html=build/phpmetris_report.html ./src,./composer.json,./composer.lock"

@@ -9,16 +9,16 @@
  * @version 0.0.0
  */
 
-namespace ThorWalez\PdfToHtml\Writers;
+namespace ThorWalez\WaybillCreator\Writers;
 
 
-use ThorWalez\PdfToHtml\Exceptions\Error\FileIsEmptyException;
-use ThorWalez\PdfToHtml\Exceptions\Error\FileNotFoundException;
-use ThorWalez\PdfToHtml\Exceptions\Error\FileNotWriteableException;
+use ThorWalez\WaybillCreator\Exceptions\Error\FileIsEmptyException;
+use ThorWalez\WaybillCreator\Exceptions\Error\FileNotFoundException;
+use ThorWalez\WaybillCreator\Exceptions\Error\FileNotWriteableException;
 
 /**
  * Class TNTPostScriptWriter
- * @package ThorWalez\PdfToHtml\Writers
+ * @package ThorWalez\WaybillCreator\Writers
  */
 class TNTPostScriptWriter
 {

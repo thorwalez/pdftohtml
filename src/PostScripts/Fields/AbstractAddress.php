@@ -9,13 +9,13 @@
  * @version 0.0.0
  */
 
-namespace ThorWalez\PdfToHtml\PostScripts\Fields;
+namespace ThorWalez\WaybillCreator\PostScripts\Fields;
 
-use ThorWalez\PdfToHtml\Converters\GermanSpecialCharacterToPostScriptCharacter;
+use ThorWalez\WaybillCreator\Converters\GermanSpecialCharacterToPostScriptCharacter;
 
 /**
  * Class AbstractAddress
- * @package ThorWalez\PdfToHtml\PostScripts\Fields
+ * @package ThorWalez\WaybillCreator\PostScripts\Fields
  */
 abstract class AbstractAddress
 {

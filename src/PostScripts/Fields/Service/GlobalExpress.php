@@ -9,14 +9,14 @@
  * @version 0.0.0
  */
 
-namespace ThorWalez\PdfToHtml\PostScripts\Fields\Service;
+namespace ThorWalez\WaybillCreator\PostScripts\Fields\Service;
 
 
-use ThorWalez\PdfToHtml\PostScripts\Fields\AbstractCheckField;
+use ThorWalez\WaybillCreator\PostScripts\Fields\AbstractCheckField;
 
 /**
  * Class GlobalExpress
- * @package ThorWalez\PdfToHtml\PostScripts\Fields\Service
+ * @package ThorWalez\WaybillCreator\PostScripts\Fields\Service
  */
 class GlobalExpress extends AbstractCheckField
 {

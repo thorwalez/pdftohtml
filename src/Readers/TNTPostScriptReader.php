@@ -9,15 +9,15 @@
  * @version 0.0.0
  */
 
-namespace ThorWalez\PdfToHtml\Readers;
+namespace ThorWalez\WaybillCreator\Readers;
 
 
-use ThorWalez\PdfToHtml\Exceptions\Error\FileIsEmptyException;
-use ThorWalez\PdfToHtml\Exceptions\Error\FileNotFoundException;
+use ThorWalez\WaybillCreator\Exceptions\Error\FileIsEmptyException;
+use ThorWalez\WaybillCreator\Exceptions\Error\FileNotFoundException;
 
 /**
  * Class TNTPostScriptReader
- * @package ThorWalez\PdfToHtml\Readers
+ * @package ThorWalez\WaybillCreator\Readers
  */
 class TNTPostScriptReader
 {

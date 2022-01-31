@@ -1,10 +1,10 @@
 <?php
 
-namespace ThorWalez\PdfToHtml\Exceptions\Error;
+namespace ThorWalez\WaybillCreator\Exceptions\Error;
 
 /**
  * Class FileNoteRenameException
- * @package ThorWalez\PdfToHtml\Exceptions\Error
+ * @package ThorWalez\WaybillCreator\Exceptions\Error
  */
 class FileNoteRenameException extends \Exception
 {

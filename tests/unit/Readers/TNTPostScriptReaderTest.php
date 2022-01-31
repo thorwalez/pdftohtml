@@ -1,8 +1,8 @@
 <?php
 
-namespace ThorWalez\PdfToHtml\Test\Readers;
+namespace ThorWalez\WaybillCreator\Test\Readers;
 
-use ThorWalez\PdfToHtml\Readers\TNTPostScriptReader;
+use ThorWalez\WaybillCreator\Readers\TNTPostScriptReader;
 use PHPUnit\Framework\TestCase;
 
 class TNTPostScriptReaderTest extends TestCase

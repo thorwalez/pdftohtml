@@ -9,11 +9,11 @@
  * @version   0.0.0
  */
 
-namespace ThorWalez\PdfToHtml\Converters;
+namespace ThorWalez\WaybillCreator\Converters;
 
 /**
  * Class PostScriptToPdfConverter
- * @package ThorWalez\PdfToHtml\Converters
+ * @package ThorWalez\WaybillCreator\Converters
  */
 class PostScriptToPdfConverter
 {

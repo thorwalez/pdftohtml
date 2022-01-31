@@ -9,14 +9,14 @@
  * @version 0.0.0
  */
 
-namespace ThorWalez\PdfToHtml\PostScripts\Fields\Duty;
+namespace ThorWalez\WaybillCreator\PostScripts\Fields\Duty;
 
 
-use ThorWalez\PdfToHtml\PostScripts\Fields\AbstractTextField;
+use ThorWalez\WaybillCreator\PostScripts\Fields\AbstractTextField;
 
 /**
  * Class Currency
- * @package ThorWalez\PdfToHtml\PostScripts\Fields\Duty
+ * @package ThorWalez\WaybillCreator\PostScripts\Fields\Duty
  */
 class Currency extends AbstractTextField
 {

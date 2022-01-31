@@ -1,10 +1,10 @@
 <?php
 
-namespace ThorWalez\PdfToHtml\Test\PostScripts\Creator;
+namespace ThorWalez\WaybillCreator\Test\PostScripts\Creator;
 
-use ThorWalez\PdfToHtml\Mappers\RequestToModel;
-use ThorWalez\PdfToHtml\Models\MainModel;
-use ThorWalez\PdfToHtml\PostScripts\Creator\Insert;
+use ThorWalez\WaybillCreator\Mappers\RequestToModel;
+use ThorWalez\WaybillCreator\Models\MainModel;
+use ThorWalez\WaybillCreator\PostScripts\Creator\Insert;
 use PHPUnit\Framework\TestCase;
 
 class InsertTest extends TestCase

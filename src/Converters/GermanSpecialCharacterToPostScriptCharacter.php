@@ -9,11 +9,11 @@
  * @version 0.0.0
  */
 
-namespace ThorWalez\PdfToHtml\Converters;
+namespace ThorWalez\WaybillCreator\Converters;
 
 /**
  * Class GermanSpecialCharacterToPostScriptCharacter
- * @package ThorWalez\PdfToHtml\Converter
+ * @package ThorWalez\WaybillCreator\Converter
  */
 class GermanSpecialCharacterToPostScriptCharacter
 {

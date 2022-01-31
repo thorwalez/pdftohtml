@@ -8,11 +8,11 @@
  * @created 4.04.2021
  * @version 0.0.0
  */
-namespace ThorWalez\PdfToHtml\Exceptions\Error;
+namespace ThorWalez\WaybillCreator\Exceptions\Error;
 
 /**
  * Class FileNotWriteableException
- * @package ThorWalez\PdfToHtml\Exceptions\Error
+ * @package ThorWalez\WaybillCreator\Exceptions\Error
  */
 class FileNotWriteableException extends \Exception
 {

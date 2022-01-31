@@ -9,11 +9,11 @@
  * @version   0.0.0
  */
 
-namespace ThorWalez\PdfToHtml\Filter;
+namespace ThorWalez\WaybillCreator\Filter;
 
 /**
  * Class RemoveNewerFilesFilter
- * @package ThorWalez\PdfToHtml\Filter
+ * @package ThorWalez\WaybillCreator\Filter
  */
 class RemoveNewerFilesFilter implements Filter
 {

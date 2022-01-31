@@ -9,11 +9,11 @@
  * @version   0.0.0
  */
 
-namespace ThorWalez\PdfToHtml\Viewer;
+namespace ThorWalez\WaybillCreator\Viewer;
 
 /**
  * Class FileListViewer
- * @package ThorWalez\PdfToHtml\Viewer
+ * @package ThorWalez\WaybillCreator\Viewer
  */
 class FileListViewer
 {

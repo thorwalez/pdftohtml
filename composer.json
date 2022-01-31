@@ -1,5 +1,5 @@
 {
-    "name": "thorwalez/pdftohtml",
+    "name": "thorwalez/waybillCreator",
     "type": "project",
     "license": "MIT",
     "minimum-stability": "dev",
@@ -69,12 +69,12 @@
     },
     "autoload": {
         "psr-4": {
-            "ThorWalez\\PdfToHtml\\": "src/"
+            "ThorWalez\\WaybillCreator\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ThorWalez\\PdfToHtml\\Test\\": "tests/unit/"
+            "ThorWalez\\WaybillCreator\\Test\\": "tests/unit/"
         }
     },
     "replace": {

@@ -1,6 +1,6 @@
 <?php
 
-namespace ThorWalez\PdfToHtml;
+namespace ThorWalez\WaybillCreator;
 
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;

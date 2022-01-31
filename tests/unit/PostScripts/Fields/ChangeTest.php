@@ -1,8 +1,8 @@
 <?php
 
-namespace ThorWalez\PdfToHtml\Test\PostScripts\Fields;
+namespace ThorWalez\WaybillCreator\Test\PostScripts\Fields;
 
-use ThorWalez\PdfToHtml\PostScripts\Fields\Change;
+use ThorWalez\WaybillCreator\PostScripts\Fields\Change;
 use PHPUnit\Framework\TestCase;
 
 class ChangeTest extends TestCase

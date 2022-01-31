@@ -9,11 +9,11 @@
  * @version 0.0.0
  */
 
-namespace ThorWalez\PdfToHtml\PostScripts\Fields;
+namespace ThorWalez\WaybillCreator\PostScripts\Fields;
 
 /**
  * Class CustomerNumberReceiver
- * @package ThorWalez\PdfToHtml\PostScripts\Fields
+ * @package ThorWalez\WaybillCreator\PostScripts\Fields
  */
 class CustomerNumberReceiver extends AbstractTextField
 {

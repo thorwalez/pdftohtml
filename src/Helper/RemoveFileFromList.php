@@ -9,12 +9,12 @@
  * @created   27.06.2021
  */
 
-namespace ThorWalez\PdfToHtml\Helper;
+namespace ThorWalez\WaybillCreator\Helper;
 
 /**
  * Class RemoveFileFromList
  *
- * @package ThorWalez\PdfToHtml\Helper
+ * @package ThorWalez\WaybillCreator\Helper
  */
 class RemoveFileFromList
 {

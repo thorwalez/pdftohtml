@@ -1,5 +1,5 @@
 {
-    "name": "thorwalez/waybillCreator",
+    "name": "thorwalez/waybill_creator",
     "type": "project",
     "license": "MIT",
     "minimum-stability": "dev",
@@ -65,7 +65,11 @@
         "preferred-install": {
             "*": "dist"
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/flex": false,
+            "composer/package-versions-deprecated": false
+        }
     },
     "autoload": {
         "psr-4": {
@@ -81,6 +85,9 @@
         "symfony/polyfill-ctype": "*",
         "symfony/polyfill-iconv": "*",
         "symfony/polyfill-php72": "*"
+    },
+    "replace-dev": {
+        "phpunit/phpunit": "^8.*|^9.5"
     },
     "scripts": {
         "auto-scripts": {

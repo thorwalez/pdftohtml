@@ -9,14 +9,14 @@
  * @version 0.0.0
  */
 
-namespace ThorWalez\PdfToHtml\PostScripts\Fields\Goods;
+namespace ThorWalez\WaybillCreator\PostScripts\Fields\Goods;
 
 
-use ThorWalez\PdfToHtml\PostScripts\Fields\AbstractTable;
+use ThorWalez\WaybillCreator\PostScripts\Fields\AbstractTable;
 
 /**
  * Class SecondGood
- * @package ThorWalez\PdfToHtml\PostScripts\Fields\Goods
+ * @package ThorWalez\WaybillCreator\PostScripts\Fields\Goods
  */
 class SecondGood extends AbstractTable
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace ThorWalez\PdfToHtml\Test\Calculator;
+namespace ThorWalez\WaybillCreator\Test\Calculator;
 
-use ThorWalez\PdfToHtml\Calculator\TotalCalculator;
+use ThorWalez\WaybillCreator\Calculator\TotalCalculator;
 use PHPUnit\Framework\TestCase;
 
 /**
  * Class TotalCalculatorTest
- * @package ThorWalez\PdfToHtml\Test\Calculator
+ * @package ThorWalez\WaybillCreator\Test\Calculator
  */
 class TotalCalculatorTest extends TestCase
 {

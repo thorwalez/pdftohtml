@@ -9,7 +9,7 @@
  * @version   0.0.0
  */
 
-namespace ThorWalez\PdfToHtml\Workers;
+namespace ThorWalez\WaybillCreator\Workers;
 
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Session\Flash\FlashBag;
@@ -18,7 +18,7 @@ use Symfony\Component\Process\Process;
 
 /**
  * Class WorkerProcessRunner
- * @package ThorWalez\PdfToHtml\Workers
+ * @package ThorWalez\WaybillCreator\Workers
  */
 class WorkerProcessRunner
 {

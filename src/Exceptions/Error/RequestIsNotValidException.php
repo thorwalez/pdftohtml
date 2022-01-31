@@ -1,11 +1,11 @@
 <?php
 
 
-namespace ThorWalez\PdfToHtml\Exceptions\Error;
+namespace ThorWalez\WaybillCreator\Exceptions\Error;
 
 /**
  * Class RequestIsNotValidException
- * @package ThorWalez\PdfToHtml\Exceptions\Error
+ * @package ThorWalez\WaybillCreator\Exceptions\Error
  */
 class RequestIsNotValidException extends \Exception
 {

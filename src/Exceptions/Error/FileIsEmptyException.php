@@ -9,11 +9,11 @@
  * @version 0.0.0
  */
 
-namespace ThorWalez\PdfToHtml\Exceptions\Error;
+namespace ThorWalez\WaybillCreator\Exceptions\Error;
 
 /**
  * Class FileIsEmptyException
- * @package ThorWalez\PdfToHtml\Exceptions\Error
+ * @package ThorWalez\WaybillCreator\Exceptions\Error
  */
 class FileIsEmptyException extends \Exception
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace ThorWalez\PdfToHtml\Test\Mappers;
+namespace ThorWalez\WaybillCreator\Test\Mappers;
 
 use PHPUnit\Framework\TestCase;
-use ThorWalez\PdfToHtml\Exceptions\Error\RequestIsNotValidException;
-use ThorWalez\PdfToHtml\Mappers\RequestToModel;
-use ThorWalez\PdfToHtml\Models\MainModel;
+use ThorWalez\WaybillCreator\Exceptions\Error\RequestIsNotValidException;
+use ThorWalez\WaybillCreator\Mappers\RequestToModel;
+use ThorWalez\WaybillCreator\Models\MainModel;
 
 class RequestToModelTest extends TestCase
 {

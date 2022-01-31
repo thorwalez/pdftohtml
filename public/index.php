@@ -20,7 +20,7 @@ if (\file_exists(dirname(__DIR__).'/vendor/autoload.php') == false){
         </html>';
     return 0;
 }
-use ThorWalez\PdfToHtml\Kernel;
+use ThorWalez\WaybillCreator\Kernel;
 use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\ErrorHandler\Debug;
 use Symfony\Component\HttpFoundation\Request;

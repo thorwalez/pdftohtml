@@ -9,7 +9,7 @@
  * @version 0.0.0
  */
 
-namespace ThorWalez\PdfToHtml\Form\Type;
+namespace ThorWalez\WaybillCreator\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;

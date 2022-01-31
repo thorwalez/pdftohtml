@@ -9,17 +9,17 @@
  * @version   0.0.0
  */
 
-namespace ThorWalez\PdfToHtml\Command;
+namespace ThorWalez\WaybillCreator\Command;
 
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
-use ThorWalez\PdfToHtml\Workers\PurgeCreatedFilesWorker;
+use ThorWalez\WaybillCreator\Workers\PurgeCreatedFilesWorker;
 
 /**
  * Class RunWorkerCommand
- * @package ThorWalez\PdfToHtml\Command
+ * @package ThorWalez\WaybillCreator\Command
  */
 class RunWorkerCommand extends Command
 {

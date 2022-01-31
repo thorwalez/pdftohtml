@@ -1,13 +1,13 @@
 <?php
 
-namespace ThorWalez\PdfToHtml\Test\Workers;
+namespace ThorWalez\WaybillCreator\Test\Workers;
 
-use ThorWalez\PdfToHtml\Workers\PurgeCreatedFilesWorker;
+use ThorWalez\WaybillCreator\Workers\PurgeCreatedFilesWorker;
 use PHPUnit\Framework\TestCase;
 
 /**
  * Class PurgeCreatedFilesWorkerTest
- * @package ThorWalez\PdfToHtml\Test\Workers
+ * @package ThorWalez\WaybillCreator\Test\Workers
  */
 class PurgeCreatedFilesWorkerTest extends TestCase
 {

@@ -9,11 +9,11 @@
  * @version   0.0.0
  */
 
-namespace ThorWalez\PdfToHtml\Calculator;
+namespace ThorWalez\WaybillCreator\Calculator;
 
 /**
  * Class TotalCalculator
- * @package ThorWalez\PdfToHtml\Calculator
+ * @package ThorWalez\WaybillCreator\Calculator
  */
 class TotalCalculator
 {

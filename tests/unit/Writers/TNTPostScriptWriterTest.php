@@ -1,8 +1,8 @@
 <?php
 
-namespace ThorWalez\PdfToHtml\Test\Writers;
+namespace ThorWalez\WaybillCreator\Test\Writers;
 
-use ThorWalez\PdfToHtml\Writers\TNTPostScriptWriter;
+use ThorWalez\WaybillCreator\Writers\TNTPostScriptWriter;
 use PHPUnit\Framework\TestCase;
 
 class TNTPostScriptWriterTest extends TestCase

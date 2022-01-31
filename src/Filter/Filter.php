@@ -9,11 +9,11 @@
  * @version   0.0.0
  */
 
-namespace ThorWalez\PdfToHtml\Filter;
+namespace ThorWalez\WaybillCreator\Filter;
 
 /**
  * Interface Filter
- * @package ThorWalez\PdfToHtml\Filter
+ * @package ThorWalez\WaybillCreator\Filter
  */
 interface Filter
 {

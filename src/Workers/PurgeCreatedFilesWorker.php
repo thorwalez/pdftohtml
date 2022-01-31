@@ -9,15 +9,15 @@
  * @version   0.0.0
  */
 
-namespace ThorWalez\PdfToHtml\Workers;
+namespace ThorWalez\WaybillCreator\Workers;
 
-use ThorWalez\PdfToHtml\Filter\RemoveNewerFilesFilter;
-use ThorWalez\PdfToHtml\Helper\RemoveFileFromList;
-use ThorWalez\PdfToHtml\Viewer\FileListViewer;
+use ThorWalez\WaybillCreator\Filter\RemoveNewerFilesFilter;
+use ThorWalez\WaybillCreator\Helper\RemoveFileFromList;
+use ThorWalez\WaybillCreator\Viewer\FileListViewer;
 
 /**
  * Class PurgeCreatedFilesWorker
- * @package ThorWalez\PdfToHtml\Workers
+ * @package ThorWalez\WaybillCreator\Workers
  */
 class PurgeCreatedFilesWorker
 {

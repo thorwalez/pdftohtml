@@ -9,41 +9,41 @@
  * @version 0.0.0
  */
 
-namespace ThorWalez\PdfToHtml\Models;
+namespace ThorWalez\WaybillCreator\Models;
 
 
-use ThorWalez\PdfToHtml\PostScripts\Fields\Change;
-use ThorWalez\PdfToHtml\PostScripts\Fields\ClientNumber;
-use ThorWalez\PdfToHtml\PostScripts\Fields\CustomerInformations;
-use ThorWalez\PdfToHtml\PostScripts\Fields\CustomerNumberReceiver;
-use ThorWalez\PdfToHtml\PostScripts\Fields\DangerousGoodsCheck;
-use ThorWalez\PdfToHtml\PostScripts\Fields\Delivery;
-use ThorWalez\PdfToHtml\PostScripts\Fields\Duty\Currency;
-use ThorWalez\PdfToHtml\PostScripts\Fields\Duty\InvoiceAmountDuty;
-use ThorWalez\PdfToHtml\PostScripts\Fields\Duty\SalesTaxNumber;
-use ThorWalez\PdfToHtml\PostScripts\Fields\Goods\FifthGood;
-use ThorWalez\PdfToHtml\PostScripts\Fields\Goods\FirstGood;
-use ThorWalez\PdfToHtml\PostScripts\Fields\Goods\FourthGood;
-use ThorWalez\PdfToHtml\PostScripts\Fields\Goods\SecondGood;
-use ThorWalez\PdfToHtml\PostScripts\Fields\Goods\ThirdGood;
-use ThorWalez\PdfToHtml\PostScripts\Fields\Goods\TotalGoodPiece;
-use ThorWalez\PdfToHtml\PostScripts\Fields\Goods\TotalGoodWeight;
-use ThorWalez\PdfToHtml\PostScripts\Fields\InsuranceAmount;
-use ThorWalez\PdfToHtml\PostScripts\Fields\InsuranceCheck;
-use ThorWalez\PdfToHtml\PostScripts\Fields\InvoiceToReceiver;
-use ThorWalez\PdfToHtml\PostScripts\Fields\PriorityCheck;
-use ThorWalez\PdfToHtml\PostScripts\Fields\Receiver;
-use ThorWalez\PdfToHtml\PostScripts\Fields\SenderDate;
-use ThorWalez\PdfToHtml\PostScripts\Fields\Service\EconomyExpress;
-use ThorWalez\PdfToHtml\PostScripts\Fields\Service\GlobalExpress;
-use ThorWalez\PdfToHtml\PostScripts\Fields\Service\NineExpress;
-use ThorWalez\PdfToHtml\PostScripts\Fields\Service\SpecialExpress;
-use ThorWalez\PdfToHtml\PostScripts\Fields\Service\TwelveExpress;
-use ThorWalez\PdfToHtml\PostScripts\Fields\SpecialNotes;
+use ThorWalez\WaybillCreator\PostScripts\Fields\Change;
+use ThorWalez\WaybillCreator\PostScripts\Fields\ClientNumber;
+use ThorWalez\WaybillCreator\PostScripts\Fields\CustomerInformations;
+use ThorWalez\WaybillCreator\PostScripts\Fields\CustomerNumberReceiver;
+use ThorWalez\WaybillCreator\PostScripts\Fields\DangerousGoodsCheck;
+use ThorWalez\WaybillCreator\PostScripts\Fields\Delivery;
+use ThorWalez\WaybillCreator\PostScripts\Fields\Duty\Currency;
+use ThorWalez\WaybillCreator\PostScripts\Fields\Duty\InvoiceAmountDuty;
+use ThorWalez\WaybillCreator\PostScripts\Fields\Duty\SalesTaxNumber;
+use ThorWalez\WaybillCreator\PostScripts\Fields\Goods\FifthGood;
+use ThorWalez\WaybillCreator\PostScripts\Fields\Goods\FirstGood;
+use ThorWalez\WaybillCreator\PostScripts\Fields\Goods\FourthGood;
+use ThorWalez\WaybillCreator\PostScripts\Fields\Goods\SecondGood;
+use ThorWalez\WaybillCreator\PostScripts\Fields\Goods\ThirdGood;
+use ThorWalez\WaybillCreator\PostScripts\Fields\Goods\TotalGoodPiece;
+use ThorWalez\WaybillCreator\PostScripts\Fields\Goods\TotalGoodWeight;
+use ThorWalez\WaybillCreator\PostScripts\Fields\InsuranceAmount;
+use ThorWalez\WaybillCreator\PostScripts\Fields\InsuranceCheck;
+use ThorWalez\WaybillCreator\PostScripts\Fields\InvoiceToReceiver;
+use ThorWalez\WaybillCreator\PostScripts\Fields\PriorityCheck;
+use ThorWalez\WaybillCreator\PostScripts\Fields\Receiver;
+use ThorWalez\WaybillCreator\PostScripts\Fields\SenderDate;
+use ThorWalez\WaybillCreator\PostScripts\Fields\Service\EconomyExpress;
+use ThorWalez\WaybillCreator\PostScripts\Fields\Service\GlobalExpress;
+use ThorWalez\WaybillCreator\PostScripts\Fields\Service\NineExpress;
+use ThorWalez\WaybillCreator\PostScripts\Fields\Service\SpecialExpress;
+use ThorWalez\WaybillCreator\PostScripts\Fields\Service\TwelveExpress;
+use ThorWalez\WaybillCreator\PostScripts\Fields\SpecialNotes;
 
 /**
  * Class MainModel
- * @package ThorWalez\PdfToHtml\Models
+ * @package ThorWalez\WaybillCreator\Models
  */
 class MainModel
 {

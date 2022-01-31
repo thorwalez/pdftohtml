@@ -1,6 +1,6 @@
 <?php
 
-namespace ThorWalez\PdfToHtml\Test\Controller;
+namespace ThorWalez\WaybillCreator\Test\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

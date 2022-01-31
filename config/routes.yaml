@@ -1,15 +1,15 @@
 index:
     path: /
-    controller: ThorWalez\PdfToHtml\Controller\DefaultController::index
+    controller: ThorWalez\WaybillCreator\Controller\DefaultController::index
 
 create:
     path: /create
-    controller: ThorWalez\PdfToHtml\Controller\DefaultController::create
+    controller: ThorWalez\WaybillCreator\Controller\DefaultController::create
 
 showpdf:
     path: /showpdf
-    controller: ThorWalez\PdfToHtml\Controller\DefaultController::viewFile
+    controller: ThorWalez\WaybillCreator\Controller\DefaultController::viewFile
 
 removepdf:
     path: /removepdf
-    controller: ThorWalez\PdfToHtml\Controller\DefaultController::removeFile
+    controller: ThorWalez\WaybillCreator\Controller\DefaultController::removeFile

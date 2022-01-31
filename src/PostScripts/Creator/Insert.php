@@ -9,11 +9,11 @@
  * @version 0.0.0
  */
 
-namespace ThorWalez\PdfToHtml\PostScripts\Creator;
+namespace ThorWalez\WaybillCreator\PostScripts\Creator;
 
 /**
  * Class Insert
- * @package ThorWalez\PdfToHtml\PostScripts\Creator
+ * @package ThorWalez\WaybillCreator\PostScripts\Creator
  */
 class Insert
 {

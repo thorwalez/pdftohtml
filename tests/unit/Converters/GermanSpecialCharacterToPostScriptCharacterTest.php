@@ -1,8 +1,8 @@
 <?php
 
-namespace ThorWalez\PdfToHtml\Test\Converters;
+namespace ThorWalez\WaybillCreator\Test\Converters;
 
-use ThorWalez\PdfToHtml\Converters\GermanSpecialCharacterToPostScriptCharacter;
+use ThorWalez\WaybillCreator\Converters\GermanSpecialCharacterToPostScriptCharacter;
 use PHPUnit\Framework\TestCase;
 
 class GermanSpecialCharacterToPostScriptCharacterTest extends TestCase

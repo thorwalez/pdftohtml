@@ -1,13 +1,13 @@
 <?php
 
-namespace ThorWalez\PdfToHtml\Test\Converters;
+namespace ThorWalez\WaybillCreator\Test\Converters;
 
 use PHPUnit\Framework\TestCase;
-use ThorWalez\PdfToHtml\Converters\PostScriptToPdfConverter;
+use ThorWalez\WaybillCreator\Converters\PostScriptToPdfConverter;
 
 /**
  * Class PostScriptToPdfConverterTest
- * @package ThorWalez\PdfToHtml\Test\Converters
+ * @package ThorWalez\WaybillCreator\Test\Converters
  */
 class PostScriptToPdfConverterTest extends TestCase
 {

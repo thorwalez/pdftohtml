@@ -9,16 +9,16 @@
  * @version   0.0.0
  */
 
-namespace ThorWalez\PdfToHtml\Mappers;
+namespace ThorWalez\WaybillCreator\Mappers;
 
 
-use ThorWalez\PdfToHtml\Calculator\TotalCalculator;
-use ThorWalez\PdfToHtml\Exceptions\Error\RequestIsNotValidException;
-use ThorWalez\PdfToHtml\Models\MainModel;
+use ThorWalez\WaybillCreator\Calculator\TotalCalculator;
+use ThorWalez\WaybillCreator\Exceptions\Error\RequestIsNotValidException;
+use ThorWalez\WaybillCreator\Models\MainModel;
 
 /**
  * Class RequestToModel
- * @package ThorWalez\PdfToHtml\Mappers
+ * @package ThorWalez\WaybillCreator\Mappers
  */
 class RequestToModel
 {
